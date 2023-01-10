@@ -1,64 +1,69 @@
 import time
 import os
 import sys
+import datetime
+
+
+def count_seconds_to_next_day(hh, mm, ss):
+    today_time = datetime.datetime.today()
+    next_day = datetime.datetime(2023, 1, 1, hh, mm, ss)
+    delta_time = next_day - today_time
+    return delta_time.seconds
+
+
+#print((count_seconds_to_next_day(12, 25, 0))/3600)
+#print(type(datetime.datetime.today().strftime("%H")))
+
 
 sys.path.insert(0, "res/root")
 from data_users import data
 
 
 data.TODAY = int(time.strftime("%w", time.localtime()))-1
-arr_starting_events_in_chat = []
 if data.TODAY == 5 or data.TODAY == -1:
     data.TODAY = 0
+
 
 #################################
 
 
-class Antispam(object):
-    def __init__(self):
-        self.count_call_function = [i for i in range(15)]
-        self.arr_check_start_function_one = []
+arr_starting_events_in_chat = set()
 
-    def check_one_start(self, id_user: int) -> bool:
-        self.arr_check_start_function_one.append(id_user)
-        self.count_call_function[self.arr_check_start_function_one.index(id_user)] += 1
-        if self.count_call_function[self.arr_check_start_function_one.index(id_user)] > 3:
-            return False
+
+def check_chat(update):
+    id_chat = update.message.chat.id
+    id_user = eval(str(update.message))['from']['id']
+
+    if id_chat in arr_starting_events_in_chat:
+        update.message.reply_text("События уже запущены!")
+        return False
+    elif os.getenv("ADMIN_ID") == str(id_user):
+        arr_starting_events_in_chat.add(id_chat)
         return True
 
 
-#######################################
+def warning_of_couple(update):
+    """function send data and time of couple"""
+    time_begin_couples = data.arr_time_couple
 
-
-
-
-def time_read(update):
-    id_chat = update.message.chat.id
-    id_user = eval(str(update.message))['from']['id']
-    if id_chat in arr_starting_events_in_chat and (id_user in data.users['TABLE_USERS'] or os.getenv("ADMIN_ID") == str(id_user)):
-        update.message.reply_text("События уже запущены!")
-        return
-    if id_user in data.users['TABLE_USERS'] or os.getenv("ADMIN_ID") == str(id_user):
-        arr_starting_events_in_chat.append(id_chat)
-        print(f"[{id_chat}] start events")
-        sleep_time = 5
+    if check_chat(update) is True:
+        bool_init = True
         while True:
-            time.sleep(sleep_time)
-            local_time_str = time.strftime("%X", time.localtime()).split(":")
-            sleep_time = 29
-            for i in range(3):
-                time_event_str = data.settings['user_settings'][data.user_id_special]['time'][i].split("=>")[0].split(":")
-                if time_event_str[0] == local_time_str[0] and int(time_event_str[1]) == int(local_time_str[1])-5:
-                    sleep_time = 60*60
-                    if True:
-                        update.message.reply_text(f'[{":".join(local_time_str)}] Увага, через 5хв буде пара!')
-                        time.sleep(60*5)
-                        update.message.reply_text(f'[{":".join(local_time_str)}] Увага, почалася пара!')
-                        callbackquerybutton.details(update)
-                    break
-                elif int(local_time_str[0]) >= 14:
-                    sleep_time = 24-(int(local_time_str[0])-6)
-                    break
-                elif int(local_time_str[0]) <= 7:
-                    sleep_time = 60*29
-                    break
+            for i, couple in enumerate(time_begin_couples):
+                time.sleep(2)
+                hours = int(datetime.datetime.today().strftime("%H"))
+                def func(arr): return list(map(int, arr.split(":")))
+                couple_time = list(map(func, couple.split("=>")))
+                def count_to_time_this_couple(): return count_seconds_to_next_day(couple_time[0][0], couple_time[0][1], 0)
+
+                print(f"До {i+1}-й пари залишилось -> {(count_to_time_this_couple()/60)} хвилин.")
+                if 3600 > count_to_time_this_couple() > 0:#скільки залишилось до пари щоб поставить таймер(налаштування, для ініціалізації)
+                    update.message.reply_text(f"To next couple [{count_to_time_this_couple()/60} mm] Initialisation success!")
+                    time.sleep(int(count_to_time_this_couple()))
+                if 60 > count_to_time_this_couple() > -60:
+                    update.message.reply_text(f"!!!====={couple_time[0]}=====!!!")
+                    #краще тут організувати час ожидания до наступної пари
+
+                if len(time_begin_couples) < i+2:#потрібно реорганізувати кінець
+                    print("sleep to next day!")
+                    time.sleep(int(count_seconds_to_next_day(8, 0, 0)))

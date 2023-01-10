@@ -21,9 +21,9 @@ from admin_commands import admin_command
 ########################################################################
 
 
-def begin_events():
+def begin_events(update, _):
     """begin events for bot"""
-    Thread(target=time_couple.time_read).start()
+    Thread(target=time_couple.warning_of_couple, args=(update,)).start()
 
 
 #begin_events()
@@ -48,7 +48,8 @@ def main():
 
     dispatcher.add_handler(CommandHandler("get_week", callbackquerybutton.get_button_options))
     dispatcher.add_handler(CommandHandler("send_chat", admin_command.send_chat))
-    dispatcher.add_handler(CommandHandler("ls_chat", admin_command.ls_chat))
+    dispatcher.add_handler(CommandHandler("start_events", begin_events))
+
 
     dispatcher.add_handler(CommandHandler("start", default_commads.start))
     dispatcher.add_handler(CommandHandler("help", default_commads.help))
