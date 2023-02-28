@@ -5,8 +5,11 @@ import os
 import datetime
 import sys
 
-sys.path.insert(0, "res")
-from data_users import data
+#data command
+from root.data_users import data
+dirname = os.path.basename(os.path.dirname(__file__))
+storage_command = data.data_commands[dirname]
+print(storage_command['version'])
 
 
 keyboard_week = [[
@@ -36,7 +39,7 @@ keyboard_edition = [
 ########################################################################
 #                       CREATED DAY CONTENT                            #
 ########################################################################
-wb = load_workbook("res/bd/database.xlsx")
+wb = load_workbook("res/bd/schedule/database.xlsx")
 ws = wb.active
 data.arr_days_week = ['Понеділок', "Вівторок", "Середа", "Четверг", "Пятниця"]
 data.arr_time_couple = ['08:00=>9:00', '09:00=>10:00', '10:00=>9:00', '11:00=>13:00']

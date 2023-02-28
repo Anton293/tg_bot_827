@@ -1,6 +1,5 @@
 import json
-
-
+import os
 dr = "res/bd/"
 
 
@@ -9,23 +8,28 @@ def read_file(src):
         return json.loads(f.read())
 
 
-
 def write_file(src, data_in_json) -> None:
     try:
-        write_in_file = open(src, "w", encoding="UTF-8")
-        json.dump(data_in_json, write_in_file, indent=2)
-        write_in_file.close()
-    except IOError:
-        print(f"[error] Неудалося создать/записать файл: {src}")
-    finally:
-        pass
+        with open(src, "w", encoding="UTF-8") as f:
+            json.dump(data_in_json, f, indent=2, ensure_ascii=False)
+    except IOError as e:
+        print(f"[error] Не удалось создать/записать файл: {src}. {e}")
 
 
+def get_list_dir(path):
+    res_list = []
+    for d in os.listdir(path):
+        if os.path.isdir(os.path.join(path, d)):
+            res_list.append(d)
+    return res_list
 
 
+#print(get_list_dir("res/bd"))
 
-class Databasebot():
+
+class Databasebot:
     def __init__(self):
+        self.data_commands = {}
         self.NAME = "HAI_BOT_518"
         self.DATABASE = []
         self.TODAY = 1
@@ -52,21 +56,12 @@ class Databasebot():
             }]
         }
 
-    def read_this_file(self, name_file):
-        try:
-            if name_file == "users":
-                self.users = read_file(dr+"users.json")
-            elif name_file == "settings":
-                self.settings = read_file(dr+"settings.json")
-        except IOError:
-            print("error reading files!")
-
-    def write_this_file(self, name_file):
-        if name_file == "users":
-            write_file(dr+"users.json", self.users)
-        elif name_file == "settings":
-            write_file(dr+"settings.json", self.settings)
+    def initialization(self):
+        path = "res/bd/"
+        for d in os.listdir(path):
+            if os.path.isdir(os.path.join(path, d)):
+                self.data_commands[d] = read_file(path+d+"/data.json")
 
 
 data = Databasebot()
-
+data.initialization()
