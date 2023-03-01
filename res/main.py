@@ -27,7 +27,8 @@ def begin_events(update, _):
     Thread(target=time_couple.check_before_start_function_warning_of_couple, args=(update,)).start()
 
 
-def call_function(func_str):
+def call_function(func_str: str):
+    """string in function"""
     parts = func_str.split('(')
     name = parts[0]
     args_str = parts[1][:-1]
@@ -37,6 +38,7 @@ def call_function(func_str):
 
 
 def keyboard_events(update: Update, _: CallbackContext) -> None:
+    """"""
     query = update.callback_query
     query.answer()
     if "week" in query.data:
@@ -70,6 +72,7 @@ def main():
     # Start polling
     updater.start_polling()
     updater.idle()
+
 
 
 if __name__ == '__main__':

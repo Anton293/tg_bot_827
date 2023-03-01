@@ -1,16 +1,15 @@
 """users commands default"""
-import sys
-import os
 from telegram import Bot
-from root.data_users import data
 from root.default import admin_command, read_file
 bot = Bot(token="5652605903:AAHDahj8anS6YLrVpgF3LN2cJFiqdINfMf0")
 
 
 admins_list = [983486538, 5741678605]
 
+
+@admin_command
 def help(update, _):
-    update.message.reply_text(f"help")
+    update.message.reply_text(f"команди нет")
 
 
 def error(update, context):
@@ -18,8 +17,8 @@ def error(update, context):
 
 
 def start(update, _):
-    bot.send_message(983486538, f"[{update.message.chat.username}|{update.message.chat.id}]\n New user!")
-    bot.send_message(5741678605, f"[{update.message.chat.username}|{update.message.chat.id}]\n New user!")
+    bot.send_message(983486538, f"[{update.message.chat.username}|{update.message.chat.id}]\n New user {update.message}!")
+    bot.send_message(5741678605, f"[{update.message.chat.username}|{update.message.chat.id}]\n New user {update.message}!")
     update.message.reply_text(f"""
     Привет, тут регистация в TikTok House! Мы будем рады увидеть тебя в нашей группе, чтобы поделиться нашими общими интересами и хобби. Наша группа - это место, где можно обмениваться мнениями, идеями и мыслями друг о друге. Но снаначала раскажите немного осебе!
 """)
@@ -45,7 +44,7 @@ def check_message(update):
             # Если найдено запрещенное слово, удаляем сообщение
             update.message.delete()
             # Отправляем уведомление об удалении сообщения
-            bot.send_message(-1001605339520, 'Сообщение было удалено, так как содержит запрещенное слово.')
+            update.bot.send_message(-1001605339520, 'Сообщение было удалено, так как содержит запрещенное слово.')
 
 
 def text(update, _):
@@ -57,8 +56,8 @@ def text(update, _):
 
         if update.message.chat.id == -1001605339520 or update.message.chat.id == 983486538:
             check_message(update)
-    except AttributeError:
-        print("Возникла ошибка")
+    except AttributeError as e:
+        print("Возникла ошибка text(update, _) \n")
 
 
 @admin_command
@@ -76,3 +75,5 @@ def reply_user(update, _):
 def get_chat(update, _):
     print(update.message.chat.id)
     print(update)
+    chat_id = -1001605339520
+    user_id = 5510301889

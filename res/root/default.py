@@ -1,16 +1,29 @@
-import json
+"""default module to bot"""
+import functools
 
 
 def admin_command(command):
+    """Decorator that checks if the user is an admin and executes the command if they are."""
+
     admins_list = [983486538, 5741678605]
 
-    def wrapper(update, context):
-        if update.message.chat.id in admins_list:
-            command(update, context)
+    @functools.wraps(command)
+    def wrapper(update, context, *args, **kwargs):
+        """Wrapper function that checks if the user is an admin and executes the command if they are."""
+        if update.message.from_user.id in admins_list:
+            return command(update, context, *args, **kwargs)
+        else:
+            return None
 
     return wrapper
 
 
-def read_file(src):
-    with open(src, "r", encoding="UTF-8") as f:
-        return f.read().split("\n")
+def read_file(file_path: str):
+    """Read the file from the given file path and return its contents as a list of strings."""
+    try:
+        with open(file_path, "r", encoding="UTF-8") as f:
+            return f.readlines()
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Could not find file at path: {file_path}")
+    except IOError as e:
+        raise IOError(f"Error reading file: {e}")
