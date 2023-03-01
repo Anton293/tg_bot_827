@@ -1,6 +1,6 @@
 import json
 import os
-dr = "res/bd/"
+dr = "res/db/"
 
 
 def read_file(src):
@@ -57,7 +57,7 @@ class Databasebot:
         }
 
     def initialization(self):
-        path = "res/bd/"
+        path = "res/db/"
         for d in os.listdir(path):
             if os.path.isdir(os.path.join(path, d)):
                 self.data_commands[d] = read_file(path+d+"/data.json")

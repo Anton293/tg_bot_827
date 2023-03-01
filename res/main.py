@@ -2,15 +2,13 @@
 A chat bot.
 """
 import os
-import json
 
 #default pkg python
-import sys
 from threading import Thread
 
 #pkg telegram bot
 from dotenv import load_dotenv
-from telegram import Update
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CommandHandler, MessageHandler, Filters, CallbackQueryHandler, Updater, CallbackContext
 
 #commands
@@ -18,8 +16,10 @@ from all_commands.schedule import time_couple, callbackquerybutton
 from all_commands.moderate_bot import admin_command
 from all_commands.default import default
 
-#initialisation .env
-load_dotenv(dotenv_path="res/bd/.env")
+#initialisation
+load_dotenv(dotenv_path="res/db/.env")
+from root.data_users import data
+storage_command = data.data_commands['default']
 
 
 def begin_events(update, _):
@@ -44,6 +44,45 @@ def keyboard_events(update: Update, _: CallbackContext) -> None:
     if "week" in query.data:
         callbackquerybutton.processing_keyboard_week(update, query, query.data.replace("week_", ""))
         return
+    elif "reply" in query.data:
+        #get data
+        arr_button_back = query.data.split(":")
+        other_user_id = arr_button_back[1]
+        admin_user_id = query.from_user.id
+        if "user_active" in query.data:
+            #add to global arr
+            storage_command['data_messages_other_user'].append(other_user_id)
+            storage_command['data_messages_admin_user'].append(admin_user_id)
+
+            #create button
+            button_reply = [
+                [InlineKeyboardButton("Отмена", callback_data=f"reply_user_cancel:{other_user_id}")]
+            ]
+            reply_markup = InlineKeyboardMarkup(button_reply)
+
+            #update message
+            query.edit_message_text(f"Ви отвечаете на: \n{query.message.text}", reply_markup=reply_markup)
+
+            #print me
+            print(query.from_user.id)
+
+        elif "reply_user_cancel" in query.data:
+            #delete in global arr
+            try:
+                del storage_command['data_messages_other_user'][storage_command['data_messages_admin_user'].index(admin_user_id)]
+                storage_command['data_messages_admin_user'].remove(admin_user_id)
+            except ValueError:
+                pass
+
+            #create button
+            button_reply = [
+                [InlineKeyboardButton("Ответить на сообщение", callback_data=f"reply_user_active:{other_user_id}")]]
+            reply_markup = InlineKeyboardMarkup(button_reply)
+
+            #update message
+            text = "\n".join(query.message.text.split("\n")[1:])
+            query.edit_message_text(text, reply_markup=reply_markup)
+
     return
 
 
@@ -72,7 +111,6 @@ def main():
     # Start polling
     updater.start_polling()
     updater.idle()
-
 
 
 if __name__ == '__main__':

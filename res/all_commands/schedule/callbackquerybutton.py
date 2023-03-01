@@ -9,6 +9,8 @@ import sys
 from root.data_users import data
 dirname = os.path.basename(os.path.dirname(__file__))
 storage_command = data.data_commands[dirname]
+from root.default import admin_command
+
 print(storage_command['version'])
 
 
@@ -39,7 +41,7 @@ keyboard_edition = [
 ########################################################################
 #                       CREATED DAY CONTENT                            #
 ########################################################################
-wb = load_workbook("res/bd/schedule/database.xlsx")
+wb = load_workbook("res/db/schedule/database.xlsx")
 ws = wb.active
 data.arr_days_week = ['Понеділок', "Вівторок", "Середа", "Четверг", "Пятниця"]
 data.arr_time_couple = ['08:00=>9:00', '09:00=>10:00', '10:00=>9:00', '11:00=>13:00']
@@ -97,6 +99,7 @@ def context_head():
 ########################################################################
 
 
+@admin_command
 def get_button_options(update, _):
     """update message options for view information week"""
     update.message.reply_text(context_head(), parse_mode="Markdown", reply_markup=reply_markup_week)
