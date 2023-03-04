@@ -8,7 +8,7 @@ from threading import Thread
 
 #pkg telegram bot
 from dotenv import load_dotenv
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, Bot
 from telegram.ext import CommandHandler, MessageHandler, Filters, CallbackQueryHandler, Updater, CallbackContext
 
 #commands
@@ -20,6 +20,7 @@ from all_commands.default import default
 load_dotenv(dotenv_path="res/db/.env")
 from root.data_users import data
 storage_command = data.data_commands['default']
+bot = Bot(token=os.getenv('TOKEN'))
 
 
 def begin_events(update, _):
@@ -38,7 +39,7 @@ def call_function(func_str: str):
 
 
 def keyboard_events(update: Update, _: CallbackContext) -> None:
-    """"""
+    """callback button"""
     query = update.callback_query
     query.answer()
     if "week" in query.data:
@@ -50,38 +51,42 @@ def keyboard_events(update: Update, _: CallbackContext) -> None:
         other_user_id = arr_button_back[1]
         admin_user_id = query.from_user.id
         if "user_active" in query.data:
-            #add to global arr
-            storage_command['data_messages_other_user'].append(other_user_id)
-            storage_command['data_messages_admin_user'].append(admin_user_id)
+            try:
+                position_other_id = storage_command['data_messages_other_user'].index(other_user_id)
+                id_admin_user = storage_command['data_messages_admin_user'][position_other_id]
+                query.message.reply_text(f"[🛑] Пользователь разговоривает с ID:{id_admin_user}")
+            except (ValueError, IndexError, AttributeError):
+                #add to global arr
+                storage_command['data_messages_other_user'].append(other_user_id)
+                storage_command['data_messages_admin_user'].append(admin_user_id)
 
-            #create button
-            button_reply = [
-                [InlineKeyboardButton("Отмена", callback_data=f"reply_user_cancel:{other_user_id}")]
-            ]
-            reply_markup = InlineKeyboardMarkup(button_reply)
+                #create button
+                button_reply = [
+                    [InlineKeyboardButton("❌Відміна❌", callback_data=f"reply_user_cancel:{other_user_id}")]
+                ]
+                reply_markup = InlineKeyboardMarkup(button_reply)
 
-            #update message
-            query.edit_message_text(f"Ви отвечаете на: \n{query.message.text}", reply_markup=reply_markup)
-
-            #print me
-            print(query.from_user.id)
+                #update message
+                query.edit_message_text(f"⏰Ви почали спілкування з: \n{query.message.text}", reply_markup=reply_markup)
 
         elif "reply_user_cancel" in query.data:
             #delete in global arr
-            try:
-                del storage_command['data_messages_other_user'][storage_command['data_messages_admin_user'].index(admin_user_id)]
-                storage_command['data_messages_admin_user'].remove(admin_user_id)
-            except ValueError:
-                pass
 
             #create button
             button_reply = [
-                [InlineKeyboardButton("Ответить на сообщение", callback_data=f"reply_user_active:{other_user_id}")]]
+                [InlineKeyboardButton("Почати чат", callback_data=f"reply_user_active:{other_user_id}")]]
             reply_markup = InlineKeyboardMarkup(button_reply)
 
             #update message
             text = "\n".join(query.message.text.split("\n")[1:])
             query.edit_message_text(text, reply_markup=reply_markup)
+
+            try:
+                del storage_command['data_messages_other_user'][storage_command['data_messages_admin_user'].index(admin_user_id)]
+                storage_command['data_messages_admin_user'].remove(admin_user_id)
+                query.message.reply_text(f"[🛑]Спілкування з користувачем 👉 @{bot.get_chat(int(other_user_id)).username} завершено!")
+            except ValueError:
+                pass
 
     return
 
