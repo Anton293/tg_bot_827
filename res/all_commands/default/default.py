@@ -8,12 +8,11 @@ import os
 from dotenv import load_dotenv
 load_dotenv(dotenv_path="res/db/.env")
 
-from root.data_users import data
+from root.data_users import data, config
+config = config.global_configuration_server
 storage_command = data.data_commands['default']
 
 bot = Bot(token=os.getenv('TOKEN'))
-admins_list = [983486538, 5741678605]
-
 
 ####################################################################
 #                           moderate users                         #
@@ -50,7 +49,7 @@ def add_record_to_database(id, username, first_name, database):
 
 def send_all_admin_message(msg: str, button="") -> None:
     """send all admins message"""
-    for admin_id in admins_list:
+    for admin_id in config['moderators']:
         bot.send_message(admin_id, msg, reply_markup=button)
 
 
@@ -70,21 +69,29 @@ def start(update, _):
 
 list_users = []
 
+BAD_WORDS_LIST = read_file("res/db/default/bad_word.txt").split("\n")
+read_file_violators = json.loads(read_file("res/db/default/violators.json"))
 
-def check_message(update):
-    """filter message on bad word"""
-    BAD_WORDS = read_file("res/db/default/bad_word.txt")
-    # Получаем текст сообщения
-    message_text = update.message.text
 
-    # Проверяем наличие запрещенных слов в сообщении
-    for word in BAD_WORDS:
+def filter_messages(message_text: str, LIST_BANNED_WORDS: list) -> bool:
+    """check banned word in message"""
+    for word in LIST_BANNED_WORDS:
         if word in message_text:
-            # Если найдено запрещенное слово, удаляем сообщение
-            update.message.delete()
-            print(update)
-            # Отправляем уведомление об удалении сообщения
-            update.bot.send_message(-1001605339520, 'Сообщение было удалено, так как содержит запрещенное слово.')
+            return True
+    return False
+
+
+def check_message_on_bad_word(update):
+    """filter message on bad word"""
+    text_message = update.message.text
+
+    if filter_messages(text_message, BAD_WORDS_LIST) is True:
+        user_id = update.message.from_user.id
+        #добавить запись нарушителя в бд и проверить сколько раз он уже нарушил + написать количество нарушений пользователя
+        update.message.delete()
+        update.bot.send_message(update.message.chat.id, 'Сообщение было удалено, так как содержит запрещенное слово.')
+        return True
+    return False
 
 
 def append_to_array_messages(file_name: str, new_element: dict) -> None:
@@ -106,7 +113,7 @@ def admin_send_message_in_virtual_chat_user(update):
         position_admin_id = storage_command['data_messages_admin_user'].index(update.message.chat.id)
         id_other_user = storage_command['data_messages_other_user'][position_admin_id]
         bot.send_message(id_other_user, update.message.text)
-        print(f"bot send message -> {id_other_user} -> {update.message.text}")
+        print(f"admin send message -> {id_other_user} -> {update.message.text}")
     except (ValueError, AttributeError):
         pass
 
@@ -121,14 +128,19 @@ def create_button(button_name, button_data):
 #######################################################
 
 
-def text(update, _):
+def text(update, _) -> None:
     """get and processing text in TG bot"""
-    #print(f"[text]боту написал {update.message.chat.username} -> {update.message.text}")
     append_to_array_messages("res/db/default/messages.json", {"message": str(update.message)})
     admin_send_message_in_virtual_chat_user(update)
 
+    if update.message.chat.id in config['chats_have_filters_bad_word'] or update.message.chat.type in config['chats_have_filters_bad_word'][0]:
+        if check_message_on_bad_word(update) is True:
+            return None
+
     try:
-        if update.message.chat.type == 'private' and update.message.chat.id not in admins_list:
+        check_type_chat = update.message.chat.type == 'private'
+        check_on_admin = update.message.from_user.id in config['moderators']
+        if check_type_chat is True and check_on_admin is False:
             list_users.append(update.message.chat.id)
             username = update.message.chat.username
             chat_id = update.message.chat.id
@@ -147,8 +159,6 @@ def text(update, _):
                 bot.send_message(983486538, f"[@{username}|{chat_id}]\n{msg}", reply_markup=reply_markup)
                 bot.send_message(5741678605, f"[@{username}|{chat_id}]\n{msg}", reply_markup=reply_markup)
 
-        if update.message.chat.id in [-1001605339520, 983486538]:
-            check_message(update)
     except AttributeError as e:
         print("Error function `text(update, _)` in `default/default.py`\n", e)
 
@@ -156,11 +166,11 @@ def text(update, _):
 @admin_command
 def reply_user(update, _):
     """reply user on message used id"""
-    if update.message.chat.type == 'private' and update.message.chat.id in admins_list:
+    if update.message.chat.type == 'private':
         try:
             res = update.message.text.split()
             bot.send_message(int(res[1]), " ".join(res[2:]))
-        except IndexError:
+        except (IndexError, ValueError):
             update.message.reply_text("Используйте: /reply_user <user_id> <message>")
         except:
             print(f"Возникла непредвиденная ошибка в функции reply_user() в default.py")

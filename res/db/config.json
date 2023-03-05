@@ -1,3 +1,5 @@
 {
-
+  "chats_have_filters_bad_word": [["private"], -1001605339520],
+  "moderators": [983486538, 5741678605],
+  "send_all_private_message_in_terminal": false
 }

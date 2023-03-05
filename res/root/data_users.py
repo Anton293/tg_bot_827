@@ -3,9 +3,16 @@ import os
 dr = "res/db/"
 
 
-def read_file(src):
-    with open(src, "r", encoding="UTF-8") as f:
-        return json.loads(f.read())
+def read_file(file_path):
+    try:
+        with open(file_path, "r", encoding="UTF-8") as f:
+            return json.loads(f.read())
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Could not find file at path: {file_path}")
+    except ValueError:
+        raise ValueError(f"File error json: {file_path}")
+    except IOError as e:
+        raise IOError(f"Error file: {e}")
 
 
 def write_file(src, data_in_json) -> None:
@@ -27,7 +34,7 @@ def get_list_dir(path):
 #print(get_list_dir("res/bd"))
 
 
-class Databasebot:
+class DatabaseBot(object):
     def __init__(self):
         self.data_commands = {}
         self.NAME = "HAI_BOT_518"
@@ -40,7 +47,7 @@ class Databasebot:
         self.user_id_special_group = []
         self.arr_files_src = ["database.json", "bd.json", "settings.json"]
         self.arr_var_in_self = ["DATABASE", "users", "settings"]
-        self.arr_days_week = ['Понеділок', "Вівторок", "Середа", "Четверг", "Пятниця"]
+        self.arr_days_week = ['Понеділок', "Вівторок", "Середа", "Четверг", "П'ятниця"]
         self.arr_time_couple = ['08:00=>9:00', '09:00=>10:00', '10:00=>9:00', '11:00=>13:00']
         self.my_msg = ""
         self.users = {
@@ -57,11 +64,24 @@ class Databasebot:
         }
 
     def initialization(self):
-        path = "res/db/"
+        path = dr
         for d in os.listdir(path):
             if os.path.isdir(os.path.join(path, d)):
                 self.data_commands[d] = read_file(path+d+"/data.json")
 
 
-data = Databasebot()
+class Config(object):
+    def __init__(self):
+        self.global_configuration_server = {}
+
+    def initialization(self):
+        self.global_configuration_server = read_file(dr + "config.json")
+
+
+data = DatabaseBot()
 data.initialization()
+
+config = Config()
+config.initialization()
+
+#init config print

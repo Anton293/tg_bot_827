@@ -38,6 +38,14 @@ def call_function(func_str: str):
     func(*args)
 
 
+def create_reply_markup_button(name_button, callback_button):
+    button_reply = [
+        [InlineKeyboardButton(name_button, callback_data=callback_button)]
+    ]
+    reply_markup = InlineKeyboardMarkup(button_reply)
+    return reply_markup
+
+
 def keyboard_events(update: Update, _: CallbackContext) -> None:
     """callback button"""
     query = update.callback_query
@@ -51,36 +59,32 @@ def keyboard_events(update: Update, _: CallbackContext) -> None:
         other_user_id = arr_button_back[1]
         admin_user_id = query.from_user.id
         if "user_active" in query.data:
-            try:
-                position_other_id = storage_command['data_messages_other_user'].index(other_user_id)
-                id_admin_user = storage_command['data_messages_admin_user'][position_other_id]
-                query.message.reply_text(f"[🛑] Пользователь разговоривает с ID:{id_admin_user}")
-            except (ValueError, IndexError, AttributeError):
-                #add to global arr
-                storage_command['data_messages_other_user'].append(other_user_id)
-                storage_command['data_messages_admin_user'].append(admin_user_id)
+            if admin_user_id not in storage_command['data_messages_admin_user']:
+                try:
+                    position_other_id = storage_command['data_messages_other_user'].index(other_user_id)
+                    id_admin_user = storage_command['data_messages_admin_user'][position_other_id]
+                    query.message.reply_text(f"[🛑] Пользователь разговоривает с ID:{id_admin_user}")
+                except (ValueError, IndexError, AttributeError):
+                    #add to global arr
+                    storage_command['data_messages_other_user'].append(other_user_id)
+                    storage_command['data_messages_admin_user'].append(admin_user_id)
 
-                #create button
-                button_reply = [
-                    [InlineKeyboardButton("❌Відміна❌", callback_data=f"reply_user_cancel:{other_user_id}")]
-                ]
-                reply_markup = InlineKeyboardMarkup(button_reply)
+                    #create button
+                    reply_markup = create_reply_markup_button("❌Відміна❌", f"reply_user_cancel:{other_user_id}")
 
-                #update message
-                query.edit_message_text(f"⏰Ви почали спілкування з: \n{query.message.text}", reply_markup=reply_markup)
+                    #update message
+                    query.edit_message_text(f"⏰Ви почали спілкування з: \n{query.message.text}", reply_markup=reply_markup)
+
 
         elif "reply_user_cancel" in query.data:
-            #delete in global arr
-
             #create button
-            button_reply = [
-                [InlineKeyboardButton("Почати чат", callback_data=f"reply_user_active:{other_user_id}")]]
-            reply_markup = InlineKeyboardMarkup(button_reply)
+            reply_markup = create_reply_markup_button("Почати чат", f"reply_user_active:{other_user_id}")
 
             #update message
             text = "\n".join(query.message.text.split("\n")[1:])
             query.edit_message_text(text, reply_markup=reply_markup)
 
+            #delete in global arr
             try:
                 del storage_command['data_messages_other_user'][storage_command['data_messages_admin_user'].index(admin_user_id)]
                 storage_command['data_messages_admin_user'].remove(admin_user_id)
