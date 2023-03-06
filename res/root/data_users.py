@@ -15,7 +15,7 @@ def read_file(file_path):
         raise IOError(f"Error file: {e}")
 
 
-def write_file(src, data_in_json) -> None:
+def write_json_in_file(data_in_json: dict, src: str) -> None:
     try:
         with open(src, "w", encoding="UTF-8") as f:
             json.dump(data_in_json, f, indent=2, ensure_ascii=False)

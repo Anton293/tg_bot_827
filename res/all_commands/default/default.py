@@ -8,11 +8,12 @@ import os
 from dotenv import load_dotenv
 load_dotenv(dotenv_path="res/db/.env")
 
-from root.data_users import data, config
+from root.data_users import data, config, write_json_in_file
 config = config.global_configuration_server
 storage_command = data.data_commands['default']
 
 bot = Bot(token=os.getenv('TOKEN'))
+
 
 ####################################################################
 #                           moderate users                         #
@@ -50,17 +51,19 @@ def add_record_to_database(id, username, first_name, database):
 def send_all_admin_message(msg: str, button=None) -> None:
     """send all admins message"""
     if button is not None:
-        for admin_id in config['moderators']:
+        for i, admin_id in enumerate(config['moderators'].copy()):
             try:
                 bot.send_message(admin_id, msg, reply_markup=button)
             except:
                 print(f"Chat not found: {admin_id}")
+                config['moderators'].remove(admin_id)
     else:
-        for admin_id in config['moderators']:
+        for i, admin_id in enumerate(config['moderators'].copy()):
             try:
                 bot.send_message(int(admin_id), msg)
             except:
                 print(f"Chat not found: {admin_id}")
+                config['moderators'].remove(admin_id)
 
 
 def start(update, _):
@@ -91,21 +94,43 @@ def filter_messages(message_text: str, LIST_BANNED_WORDS: list) -> bool:
     return False
 
 
+def count_violators(group_id: int, user_id: int):
+    for i, item in enumerate(read_file_violators):
+        if item[0] == user_id:
+            if item[1] >= 5:
+                try:
+                    bot.kick_chat_member(chat_id=group_id, user_id=user_id)
+                except error.BadRequest as e:
+                    print(f"User {user_id} -> {e}")
+                return -1
+            read_file_violators[i][1] = item[1]+1
+            write_json_in_file(read_file_violators, "res/db/default/violators.json")
+            return item[1]
+    read_file_violators.append([user_id, 1])
+    bot.send_message(group_id, read_file("res/db/default/role_group.txt"))
+    write_json_in_file(read_file_violators, "res/db/default/violators.json")
+    return 1
+
+
 def check_message_on_bad_word(update):
     """filter message on bad word"""
     text_message = update.message.text
 
     if filter_messages(text_message.lower(), BAD_WORDS_LIST) is True:
         from_user = update.message.from_user
-        user_id = from_user.id
         #добавить запись нарушителя в бд и проверить сколько раз он уже нарушил + написать количество нарушений пользователя
+        res = count_violators(update.message.chat.id, from_user.id)
+
         name_violators = from_user.username
         if name_violators:
             name_violators = from_user.first_name
 
         try:
             update.message.delete()
-            bot.send_message(update.message.chat.id, f'Сообщение от пользователя {name_violators} было удалено, так как содержит запрещенное слово.')
+            if update.message.chat.type != "private":
+                bot.send_message(update.message.chat.id, f'Нарушения {res} из 5. Сообщение от пользователя {name_violators} было удалено, так как содержит запрещенное слово или контекст.')
+            else:
+                bot.send_message(update.message.chat.id, f'Сообщение несет агрессию. Будьте вежливы и терпеливы.')
         except error.BadRequest as e:
             print(f"Error: {e}")
         return True
@@ -146,7 +171,7 @@ def create_button(button_name, button_data):
 #######################################################
 
 
-def text(update, _):
+def text(update, _) -> None:
     """get and processing text in TG bot"""
     append_to_array_messages("res/db/default/messages.json", {"message": str(update.message)})
     admin_send_message_in_virtual_chat_user(update)
@@ -167,22 +192,21 @@ def text(update, _):
 
             if str(chat_id) in storage_command['data_messages_other_user']:
                 try:
-                    position_other_id = storage_command['data_messages_other_user'].index(chat_id)
+                    position_other_id = storage_command['data_messages_other_user'].index(str(chat_id))
                     id_admin_user = storage_command['data_messages_admin_user'][position_other_id]
                     #тут можно разместить команди для конкретного пользователя
                     bot.send_message(int(id_admin_user), f"[@{username}]\n{msg}")
                 except ValueError:
                     print(f"снова возникла ошипка -> ValueError: {chat_id} is not in list")
             else:
-                bot.send_message(983486538, f"[@{username}|{chat_id}]\n{msg}", reply_markup=reply_markup)
-                bot.send_message(5741678605, f"[@{username}|{chat_id}]\n{msg}", reply_markup=reply_markup)
+                send_all_admin_message(f"[@{username}|{chat_id}]\n{msg}", reply_markup)
 
     except AttributeError as e:
         print("Error function `text(update, _)` in `default/default.py`\n", e)
 
 
 @admin_command
-def reply_user(update, _):
+def reply_user(update, _) -> None:
     """reply user on message used id"""
     if update.message.chat.type == 'private':
         try:
@@ -191,14 +215,16 @@ def reply_user(update, _):
         except (IndexError, ValueError):
             update.message.reply_text("Используйте: /reply_user <user_id> <message>")
         except:
-            print(f"Возникла непредвиденная ошибка в функции reply_user() в default.py")
+            print(f"Возникла непредвиденная ошибка в функции reply_user() в default.py -> {update.message}")
 
 
 @admin_command
-def stoped_all_chat_moderators(update, _):
+def stop_all_chat_moderators(update, _):
     """stop all chat and send message"""
     storage_command['data_messages_admin_user'] = []
     storage_command['data_messages_other_user'] = []
+    for admin_id in storage_command['data_messages_admin_user']:
+        bot.send_message(admin_id, "Всі чати були завершені, але за бажанням ви можете продовжити розмову")
     update.message.reply_text("chats by stoped in admins")
 
 

@@ -1510,5 +1510,350 @@
   },
   {
     "message": "{'caption_entities': [], 'channel_chat_created': False, 'chat': {'type': 'supergroup', 'title': 'Love_Nest_Vibe', 'id': -1001605339520}, 'new_chat_photo': [], 'group_chat_created': False, 'entities': [{'length': 21, 'offset': 0, 'type': 'bot_command'}], 'sender_chat': {'type': 'supergroup', 'title': 'Love_Nest_Vibe', 'id': -1001605339520}, 'supergroup_chat_created': False, 'text': '/get_week@khai_ua_bot', 'author_signature': 'Владелец', 'message_id': 2564, 'new_chat_members': [], 'date': 1678118218, 'photo': [], 'delete_chat_photo': False, 'from': {'id': 1087968824, 'username': 'GroupAnonymousBot', 'first_name': 'Group', 'is_bot': True}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678118933, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2568, 'text': 'зашли мигом на калап', 'from': {'first_name': 'кикити', 'id': 6152257699, 'is_bot': False, 'username': 'Roblob2004'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678119236, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2570, 'text': 'Ребят у меня 1 проц', 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678119266, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2571, 'text': 'В мене 4 бляяя', 'from': {'first_name': '~Лія~', 'id': 1796251518, 'is_bot': False, 'username': 'Lilka_629ua'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678119695, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2579, 'text': 'А вы уже закончили снимать калаб?', 'from': {'first_name': '...', 'id': 2081094537, 'is_bot': False, 'username': 'nika3853'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678119700, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2580, 'text': 'Да', 'from': {'first_name': '.', 'id': 5741678605, 'is_bot': False, 'last_name': 'Viktoria .', 'username': 'vikitosi1'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678119720, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2581, 'text': 'А можешь показать как получилось', 'from': {'first_name': '...', 'id': 2081094537, 'is_bot': False, 'username': 'nika3853'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678119793, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2582, 'text': '?', 'from': {'first_name': '.', 'id': 5741678605, 'is_bot': False, 'last_name': 'Viktoria .', 'username': 'vikitosi1'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'reply_to_message': {'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'video': {'height': 1024, 'file_unique_id': 'AgADmiwAAsxiMEg', 'file_id': 'BAACAgIAAx0CX6-JgAACChdkBhak9XlvLQte_XhTGTgI-nd9_wACmiwAAsxiMEieUSbhlXk-Ri4E', 'thumb': {'height': 320, 'file_unique_id': 'AQADmiwAAsxiMEhy', 'file_id': 'AAMCAgADHQJfr4mAAAIKF2QGFqT1eW8tC179eFMZOAj6d33_AAKaLAACzGIwSJ5RJuGVeT5GAQAHbQADLgQ', 'width': 180, 'file_size': 2615}, 'width': 576, 'file_size': 881490, 'duration': 15, 'mime_type': 'video/mp4'}, 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'caption': 'Хех)', 'date': 1678120612, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2583, 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}, 'date': 1678120644, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_thread_id': 2583, 'message_id': 2584, 'text': 'Пон', 'from': {'first_name': '...', 'id': 2081094537, 'is_bot': False, 'username': 'nika3853'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678120665, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2585, 'text': 'ТА.П.О.Н', 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678120866, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2598, 'text': '👹', 'from': {'first_name': 'Найн', 'id': 1587045630, 'is_bot': False, 'username': 'Katya530'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121333, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2613, 'text': 'Нащо ви спамите???', 'from': {'first_name': '~Лія~', 'id': 1796251518, 'is_bot': False, 'username': 'Lilka_629ua'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': 5924091558, 'first_name': 'JPG', 'type': 'private'}, 'new_chat_photo': [], 'date': 1678121375, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 1119, 'text': 'Hello', 'from': {'first_name': 'JPG', 'id': 5924091558, 'is_bot': False, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': 983486538, 'username': 'Anton293', 'first_name': 'Антон', 'type': 'private'}, 'new_chat_photo': [], 'date': 1678121398, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 1121, 'text': 'Привет', 'from': {'first_name': 'Антон', 'id': 983486538, 'is_bot': False, 'language_code': 'ru', 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': 983486538, 'username': 'Anton293', 'first_name': 'Антон', 'type': 'private'}, 'new_chat_photo': [], 'date': 1678121409, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 1123, 'text': 'Як справи?', 'from': {'first_name': 'Антон', 'id': 983486538, 'is_bot': False, 'language_code': 'ru', 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': 5924091558, 'first_name': 'JPG', 'type': 'private'}, 'new_chat_photo': [], 'date': 1678121422, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 1125, 'text': 'Добре', 'from': {'first_name': 'JPG', 'id': 5924091558, 'is_bot': False, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'reply_to_message': {'supergroup_chat_created': False, 'group_chat_created': False, 'voice': {'file_unique_id': 'AgADtywAAsxiMEg', 'file_id': 'AwACAgIAAx0CX6-JgAACCjBkBhkBpweCgss30Nu3msrV2-mL6AACtywAAsxiMEjCcgRhKSPFKy4E', 'file_size': 365873, 'duration': 17, 'mime_type': 'audio/ogg'}, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121217, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2608, 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}, 'date': 1678121473, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_thread_id': 2608, 'message_id': 2614, 'text': 'Это типо у тебя др?', 'from': {'first_name': '.', 'id': 5741678605, 'is_bot': False, 'last_name': 'Viktoria .', 'username': 'vikitosi1'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': 5924091558, 'first_name': 'JPG', 'type': 'private'}, 'new_chat_photo': [], 'date': 1678121502, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 1126, 'text': 'Чому мовчишь?', 'from': {'first_name': 'JPG', 'id': 5924091558, 'is_bot': False, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121542, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2615, 'text': 'Да', 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121569, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2616, 'text': 'Не кто не поздравил', 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121577, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2617, 'text': 'Кто хочет в мой роблокс хаус пишите в лс', 'from': {'first_name': 'никуликс👅', 'id': 1110904705, 'is_bot': False, 'username': 'nikxxweert_xq'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121581, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2618, 'text': 'Поздравляю😘', 'from': {'first_name': '~Лія~', 'id': 1796251518, 'is_bot': False, 'username': 'Lilka_629ua'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121588, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2619, 'text': 'Пж найдитесь', 'from': {'first_name': 'никуликс👅', 'id': 1110904705, 'is_bot': False, 'username': 'nikxxweert_xq'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'reply_to_message': {'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121577, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2617, 'text': 'Кто хочет в мой роблокс хаус пишите в лс', 'from': {'first_name': 'никуликс👅', 'id': 1110904705, 'is_bot': False, 'username': 'nikxxweert_xq'}}, 'date': 1678121604, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_thread_id': 2617, 'message_id': 2620, 'text': 'Нафіга?', 'from': {'first_name': '~Лія~', 'id': 1796251518, 'is_bot': False, 'username': 'Lilka_629ua'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'reply_to_message': {'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'chat': {'id': -1001605339520, 'type': 'supergroup', 'title': 'Love_Nest_Vibe'}, 'new_chat_photo': [], 'date': 1678121581, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 2618, 'text': 'Поздравляю😘', 'from': {'first_name': '~Лія~', 'id': 1796251518, 'is_bot': False, 'username': 'Lilka_629ua'}}, 'date': 1678121607, 'entities': [], 'channel_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'caption_entities': [], 'message_thread_id': 2618, 'message_id': 2621, 'text': 'Спс', 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}"
+  },
+  {
+    "message": "{'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'group_chat_created': False, 'caption_entities': [], 'text': 'Гснс', 'delete_chat_photo': False, 'channel_chat_created': False, 'date': 1678121613, 'supergroup_chat_created': False, 'new_chat_members': [], 'new_chat_photo': [], 'photo': [], 'message_id': 1127, 'entities': [], 'from': {'language_code': 'ru', 'first_name': 'JPG', 'id': 5924091558, 'is_bot': False}}"
+  },
+  {
+    "message": "{'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'group_chat_created': False, 'caption_entities': [], 'text': 'Мшрг', 'delete_chat_photo': False, 'channel_chat_created': False, 'date': 1678121619, 'supergroup_chat_created': False, 'new_chat_members': [], 'new_chat_photo': [], 'photo': [], 'message_id': 1129, 'entities': [], 'from': {'language_code': 'ru', 'first_name': 'JPG', 'id': 5924091558, 'is_bot': False}}"
+  },
+  {
+    "message": "{'chat': {'username': 'Anton293', 'first_name': 'Антон', 'type': 'private', 'id': 983486538}, 'group_chat_created': False, 'caption_entities': [], 'text': 'Шиг', 'delete_chat_photo': False, 'channel_chat_created': False, 'date': 1678121634, 'supergroup_chat_created': False, 'new_chat_members': [], 'new_chat_photo': [], 'photo': [], 'message_id': 1131, 'entities': [], 'from': {'language_code': 'ru', 'first_name': 'Антон', 'username': 'Anton293', 'id': 983486538, 'is_bot': False}}"
+  },
+  {
+    "message": "{'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'group_chat_created': False, 'caption_entities': [], 'text': 'Омгп', 'delete_chat_photo': False, 'channel_chat_created': False, 'date': 1678121646, 'supergroup_chat_created': False, 'new_chat_members': [], 'new_chat_photo': [], 'photo': [], 'message_id': 1133, 'entities': [], 'from': {'language_code': 'ru', 'first_name': 'JPG', 'id': 5924091558, 'is_bot': False}}"
+  },
+  {
+    "message": "{'chat': {'title': 'Love_Nest_Vibe', 'type': 'supergroup', 'id': -1001605339520}, 'group_chat_created': False, 'reply_to_message': {'chat': {'title': 'Love_Nest_Vibe', 'type': 'supergroup', 'id': -1001605339520}, 'group_chat_created': False, 'caption_entities': [], 'text': 'Не кто не поздравил', 'delete_chat_photo': False, 'channel_chat_created': False, 'date': 1678121569, 'supergroup_chat_created': False, 'new_chat_members': [], 'new_chat_photo': [], 'photo': [], 'message_id': 2616, 'entities': [], 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}, 'caption_entities': [], 'text': 'Поздравляю)', 'delete_chat_photo': False, 'channel_chat_created': False, 'date': 1678121650, 'supergroup_chat_created': False, 'new_chat_members': [], 'new_chat_photo': [], 'photo': [], 'message_thread_id': 2616, 'message_id': 2622, 'entities': [], 'from': {'first_name': 'Аліса', 'username': 'small_kitten_1', 'id': 1290960756, 'is_bot': False}}"
+  },
+  {
+    "message": "{'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'group_chat_created': False, 'caption_entities': [], 'text': 'Гпг', 'delete_chat_photo': False, 'channel_chat_created': False, 'date': 1678121651, 'supergroup_chat_created': False, 'new_chat_members': [], 'new_chat_photo': [], 'photo': [], 'message_id': 1135, 'entities': [], 'from': {'language_code': 'ru', 'first_name': 'JPG', 'id': 5924091558, 'is_bot': False}}"
+  },
+  {
+    "message": "{'text': 'Мнм', 'delete_chat_photo': False, 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1137, 'entities': [], 'new_chat_photo': [], 'supergroup_chat_created': False, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'date': 1678121883, 'caption_entities': [], 'photo': [], 'from': {'is_bot': False, 'language_code': 'ru', 'id': 5924091558, 'first_name': 'JPG'}}"
+  },
+  {
+    "message": "{'text': 'Игм', 'delete_chat_photo': False, 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1139, 'entities': [], 'new_chat_photo': [], 'supergroup_chat_created': False, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'date': 1678121889, 'caption_entities': [], 'photo': [], 'from': {'is_bot': False, 'language_code': 'ru', 'id': 5924091558, 'first_name': 'JPG'}}"
+  },
+  {
+    "message": "{'text': 'Привет р', 'delete_chat_photo': False, 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1141, 'entities': [], 'new_chat_photo': [], 'supergroup_chat_created': False, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'date': 1678121893, 'caption_entities': [], 'photo': [], 'from': {'is_bot': False, 'language_code': 'ru', 'id': 5924091558, 'first_name': 'JPG'}}"
+  },
+  {
+    "message": "{'text': 'Ршрш', 'delete_chat_photo': False, 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1143, 'entities': [], 'new_chat_photo': [], 'supergroup_chat_created': False, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'date': 1678121896, 'caption_entities': [], 'photo': [], 'from': {'is_bot': False, 'language_code': 'ru', 'id': 5924091558, 'first_name': 'JPG'}}"
+  },
+  {
+    "message": "{'text': 'Тест', 'delete_chat_photo': False, 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1145, 'entities': [], 'new_chat_photo': [], 'supergroup_chat_created': False, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'date': 1678121912, 'caption_entities': [], 'photo': [], 'from': {'is_bot': False, 'language_code': 'ru', 'id': 5924091558, 'first_name': 'JPG'}}"
+  },
+  {
+    "message": "{'date': 1678121974, 'channel_chat_created': False, 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'message_id': 1147, 'chat': {'type': 'private', 'id': 5924091558, 'first_name': 'JPG'}, 'delete_chat_photo': False, 'photo': [], 'new_chat_members': [], 'text': 'Hi', 'new_chat_photo': [], 'entities': [], 'from': {'first_name': 'JPG', 'language_code': 'ru', 'id': 5924091558, 'is_bot': False}}"
+  },
+  {
+    "message": "{'date': 1678121984, 'channel_chat_created': False, 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'message_id': 1149, 'chat': {'type': 'private', 'id': 5924091558, 'first_name': 'JPG'}, 'delete_chat_photo': False, 'photo': [], 'new_chat_members': [], 'text': 'Hi', 'new_chat_photo': [], 'entities': [], 'from': {'first_name': 'JPG', 'language_code': 'ru', 'id': 5924091558, 'is_bot': False}}"
+  },
+  {
+    "message": "{'date': 1678121999, 'channel_chat_created': False, 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'message_id': 2623, 'chat': {'title': 'Love_Nest_Vibe', 'type': 'supergroup', 'id': -1001605339520}, 'delete_chat_photo': False, 'message_thread_id': 2616, 'photo': [], 'new_chat_members': [], 'text': 'С днём рождения!!!', 'new_chat_photo': [], 'reply_to_message': {'date': 1678121569, 'channel_chat_created': False, 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'message_id': 2616, 'chat': {'title': 'Love_Nest_Vibe', 'type': 'supergroup', 'id': -1001605339520}, 'delete_chat_photo': False, 'photo': [], 'new_chat_members': [], 'text': 'Не кто не поздравил', 'new_chat_photo': [], 'entities': [], 'from': {'first_name': 'зачем читаеш пупсик', 'id': 5155954258, 'is_bot': False}}, 'entities': [], 'from': {'first_name': '.', 'username': 'vikitosi1', 'last_name': 'Viktoria .', 'id': 5741678605, 'is_bot': False}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'text': 'Hi', 'new_chat_photo': [], 'photo': [], 'message_id': 1151, 'date': 1678122019, 'delete_chat_photo': False, 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'new_chat_members': [], 'from': {'is_bot': False, 'first_name': 'JPG', 'language_code': 'ru', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'text': 'Hi', 'new_chat_photo': [], 'photo': [], 'message_id': 1153, 'date': 1678122024, 'delete_chat_photo': False, 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'new_chat_members': [], 'from': {'is_bot': False, 'first_name': 'JPG', 'language_code': 'ru', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'text': 'Hi', 'new_chat_photo': [], 'photo': [], 'message_id': 1155, 'date': 1678122030, 'delete_chat_photo': False, 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'new_chat_members': [], 'from': {'is_bot': False, 'first_name': 'JPG', 'language_code': 'ru', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'text': 'Hi', 'new_chat_photo': [], 'photo': [], 'message_id': 1157, 'date': 1678122033, 'delete_chat_photo': False, 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'new_chat_members': [], 'from': {'is_bot': False, 'first_name': 'JPG', 'language_code': 'ru', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'message_thread_id': 2624, 'channel_chat_created': False, 'entities': [], 'text': 'За оскорбления администрации 💗', 'new_chat_photo': [], 'photo': [], 'reply_to_message': {'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'new_chat_photo': [], 'photo': [], 'message_id': 2624, 'date': 1678122101, 'left_chat_member': {'username': 'nikxxweert_xq', 'is_bot': False, 'first_name': 'никуликс👅', 'id': 1110904705}, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'vikitosi1', 'is_bot': False, 'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605}}, 'message_id': 2625, 'date': 1678122120, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'vikitosi1', 'is_bot': False, 'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'message_thread_id': 2616, 'channel_chat_created': False, 'entities': [], 'text': 'С днём рождения 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳', 'new_chat_photo': [], 'photo': [], 'reply_to_message': {'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'text': 'Не кто не поздравил', 'new_chat_photo': [], 'photo': [], 'message_id': 2616, 'date': 1678121569, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'is_bot': False, 'first_name': 'зачем читаеш пупсик', 'id': 5155954258}}, 'message_id': 2626, 'date': 1678122163, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'nika3853', 'is_bot': False, 'first_name': '...', 'id': 2081094537}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'message_thread_id': 2624, 'channel_chat_created': False, 'entities': [], 'text': 'И за спам💗', 'new_chat_photo': [], 'photo': [], 'reply_to_message': {'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'message_thread_id': 2624, 'channel_chat_created': False, 'entities': [], 'text': 'За оскорбления администрации 💗', 'new_chat_photo': [], 'photo': [], 'message_id': 2625, 'date': 1678122120, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'vikitosi1', 'is_bot': False, 'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605}}, 'message_id': 2627, 'date': 1678122207, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'vikitosi1', 'is_bot': False, 'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'message_thread_id': 2624, 'channel_chat_created': False, 'entities': [], 'text': 'Понятно', 'new_chat_photo': [], 'photo': [], 'reply_to_message': {'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'message_thread_id': 2624, 'channel_chat_created': False, 'entities': [], 'text': 'И за спам💗', 'new_chat_photo': [], 'photo': [], 'message_id': 2627, 'date': 1678122207, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'vikitosi1', 'is_bot': False, 'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605}}, 'message_id': 2629, 'date': 1678122216, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'nika3853', 'is_bot': False, 'first_name': '...', 'id': 2081094537}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'text': 'Кто не верит 😉', 'new_chat_photo': [], 'photo': [], 'message_id': 2630, 'date': 1678122220, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'vikitosi1', 'is_bot': False, 'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'message_thread_id': 2628, 'channel_chat_created': False, 'entities': [], 'text': 'Пипец', 'new_chat_photo': [], 'photo': [], 'reply_to_message': {'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'new_chat_photo': [], 'photo': [{'height': 90, 'file_unique_id': 'AQADZMcxG8xiMEh4', 'width': 40, 'file_id': 'AgACAgIAAx0CX6-JgAACCkRkBhzlvjYbcWT53nZkcR4zPARLpwACZMcxG8xiMEidGixcyPXThgEAAwIAA3MAAy4E', 'file_size': 1040}, {'height': 320, 'file_unique_id': 'AQADZMcxG8xiMEhy', 'width': 144, 'file_id': 'AgACAgIAAx0CX6-JgAACCkRkBhzlvjYbcWT53nZkcR4zPARLpwACZMcxG8xiMEidGixcyPXThgEAAwIAA20AAy4E', 'file_size': 15608}, {'height': 800, 'file_unique_id': 'AQADZMcxG8xiMEh9', 'width': 360, 'file_id': 'AgACAgIAAx0CX6-JgAACCkRkBhzlvjYbcWT53nZkcR4zPARLpwACZMcxG8xiMEidGixcyPXThgEAAwIAA3gAAy4E', 'file_size': 54253}, {'height': 1280, 'file_unique_id': 'AQADZMcxG8xiMEh-', 'width': 576, 'file_id': 'AgACAgIAAx0CX6-JgAACCkRkBhzlvjYbcWT53nZkcR4zPARLpwACZMcxG8xiMEidGixcyPXThgEAAwIAA3kAAy4E', 'file_size': 86312}], 'message_id': 2628, 'date': 1678122213, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'vikitosi1', 'is_bot': False, 'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605}}, 'message_id': 2631, 'date': 1678122239, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'nika3853', 'is_bot': False, 'first_name': '...', 'id': 2081094537}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'text': 'УРА Я ТИПЕРЬ ОДНА ВЕРОНИКА🥳🥳🥳', 'new_chat_photo': [], 'photo': [], 'message_id': 2632, 'date': 1678122272, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'nika3853', 'is_bot': False, 'first_name': '...', 'id': 2081094537}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'message_thread_id': 2632, 'channel_chat_created': False, 'entities': [], 'text': 'Одно временно плохо,и хорошо', 'new_chat_photo': [], 'photo': [], 'reply_to_message': {'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'channel_chat_created': False, 'entities': [], 'text': 'УРА Я ТИПЕРЬ ОДНА ВЕРОНИКА🥳🥳🥳', 'new_chat_photo': [], 'photo': [], 'message_id': 2632, 'date': 1678122272, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'edit_date': 1678122284, 'from': {'username': 'nika3853', 'is_bot': False, 'first_name': '...', 'id': 2081094537}}, 'message_id': 2633, 'date': 1678122304, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'from': {'username': 'vikitosi1', 'is_bot': False, 'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605}}"
+  },
+  {
+    "message": "{'channel_chat_created': False, 'text': 'Одновременно плохо и хорошо', 'message_thread_id': 2632, 'new_chat_photo': [], 'supergroup_chat_created': False, 'reply_to_message': {'channel_chat_created': False, 'edit_date': 1678122284, 'text': 'УРА Я ТИПЕРЬ ОДНА ВЕРОНИКА🥳🥳🥳', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 2632, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'date': 1678122272, 'photo': [], 'from': {'first_name': '...', 'id': 2081094537, 'username': 'nika3853', 'is_bot': False}}, 'message_id': 2635, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'date': 1678122324, 'photo': [], 'from': {'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605, 'username': 'vikitosi1', 'is_bot': False}}"
+  },
+  {
+    "message": "{'channel_chat_created': False, 'text': 'И че', 'message_thread_id': 2634, 'new_chat_photo': [], 'supergroup_chat_created': False, 'reply_to_message': {'channel_chat_created': False, 'text': 'Сообщение от пользователя . было удалено, так как содержит запрещенное слово.', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 2634, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'date': 1678122305, 'photo': [], 'from': {'first_name': '518', 'id': 1019029854, 'username': 'chat_login_bot', 'is_bot': True}}, 'message_id': 2636, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'date': 1678122325, 'photo': [], 'from': {'first_name': '...', 'id': 2081094537, 'username': 'nika3853', 'is_bot': False}}"
+  },
+  {
+    "message": "{'channel_chat_created': False, 'text': 'Hi', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 1159, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'delete_chat_photo': False, 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'new_chat_members': [], 'date': 1678122328, 'photo': [], 'from': {'first_name': 'JPG', 'id': 5924091558, 'is_bot': False, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'channel_chat_created': False, 'text': 'А че', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 2638, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'date': 1678122330, 'photo': [], 'from': {'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605, 'username': 'vikitosi1', 'is_bot': False}}"
+  },
+  {
+    "message": "{'channel_chat_created': False, 'text': 'Hi', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 1161, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'delete_chat_photo': False, 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'new_chat_members': [], 'date': 1678122333, 'photo': [], 'from': {'first_name': 'JPG', 'id': 5924091558, 'is_bot': False, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'channel_chat_created': False, 'text': 'Я же не че не писала например в мат', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 2639, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'delete_chat_photo': False, 'chat': {'title': 'Love_Nest_Vibe', 'id': -1001605339520, 'type': 'supergroup'}, 'new_chat_members': [], 'date': 1678122341, 'photo': [], 'from': {'last_name': 'Viktoria .', 'first_name': '.', 'id': 5741678605, 'username': 'vikitosi1', 'is_bot': False}}"
+  },
+  {
+    "message": "{'caption_entities': [], 'date': 1678122405, 'chat': {'type': 'private', 'first_name': 'JPG', 'id': 5924091558}, 'new_chat_photo': [], 'supergroup_chat_created': False, 'photo': [], 'text': 'Hi', 'entities': [], 'channel_chat_created': False, 'delete_chat_photo': False, 'group_chat_created': False, 'message_id': 1163, 'new_chat_members': [], 'from': {'first_name': 'JPG', 'is_bot': False, 'language_code': 'ru', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'caption_entities': [], 'date': 1678122408, 'chat': {'type': 'private', 'first_name': 'JPG', 'id': 5924091558}, 'new_chat_photo': [], 'supergroup_chat_created': False, 'photo': [], 'text': 'Hi', 'entities': [], 'channel_chat_created': False, 'delete_chat_photo': False, 'group_chat_created': False, 'message_id': 1165, 'new_chat_members': [], 'from': {'first_name': 'JPG', 'is_bot': False, 'language_code': 'ru', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'channel_chat_created': False, 'caption_entities': [], 'new_chat_photo': [], 'photo': [], 'supergroup_chat_created': False, 'new_chat_members': [], 'date': 1678122636, 'delete_chat_photo': False, 'text': 'Hi', 'group_chat_created': False, 'message_id': 1167, 'chat': {'first_name': 'JPG', 'type': 'private', 'id': 5924091558}, 'entities': [], 'from': {'first_name': 'JPG', 'language_code': 'ru', 'is_bot': False, 'id': 5924091558}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'channel_chat_created': False, 'photo': [], 'supergroup_chat_created': False, 'entities': [], 'message_id': 1169, 'date': 1678122723, 'caption_entities': [], 'new_chat_photo': [], 'text': 'Hi', 'delete_chat_photo': False, 'from': {'language_code': 'ru', 'first_name': 'JPG', 'is_bot': False, 'id': 5924091558}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'channel_chat_created': False, 'photo': [], 'supergroup_chat_created': False, 'entities': [], 'message_id': 1171, 'date': 1678122727, 'caption_entities': [], 'new_chat_photo': [], 'text': 'Ho', 'delete_chat_photo': False, 'from': {'language_code': 'ru', 'first_name': 'JPG', 'is_bot': False, 'id': 5924091558}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'channel_chat_created': False, 'photo': [], 'supergroup_chat_created': False, 'entities': [], 'message_id': 1173, 'date': 1678122729, 'caption_entities': [], 'new_chat_photo': [], 'text': 'Hch', 'delete_chat_photo': False, 'from': {'language_code': 'ru', 'first_name': 'JPG', 'is_bot': False, 'id': 5924091558}}"
+  },
+  {
+    "message": "{'caption_entities': [], 'text': 'Hi', 'date': 1678122851, 'group_chat_created': False, 'new_chat_members': [], 'new_chat_photo': [], 'channel_chat_created': False, 'photo': [], 'supergroup_chat_created': False, 'chat': {'id': 5924091558, 'type': 'private', 'first_name': 'JPG'}, 'delete_chat_photo': False, 'message_id': 1175, 'entities': [], 'from': {'id': 5924091558, 'is_bot': False, 'first_name': 'JPG', 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'date': 1678122899, 'delete_chat_photo': False, 'message_id': 1176, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'photo': [], 'new_chat_photo': [], 'text': 'Gg', 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'is_bot': False, 'first_name': 'JPG', 'language_code': 'ru', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'date': 1678122909, 'delete_chat_photo': False, 'message_id': 1177, 'new_chat_members': [], 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'entities': [], 'caption_entities': [], 'group_chat_created': False, 'photo': [], 'new_chat_photo': [], 'text': 'Gi', 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'is_bot': False, 'first_name': 'JPG', 'language_code': 'ru', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'delete_chat_photo': False, 'chat': {'id': 5924091558, 'first_name': 'JPG', 'type': 'private'}, 'group_chat_created': False, 'caption_entities': [], 'date': 1678122926, 'photo': [], 'supergroup_chat_created': False, 'message_id': 1178, 'entities': [], 'text': 'Hh', 'channel_chat_created': False, 'new_chat_photo': [], 'new_chat_members': [], 'from': {'is_bot': False, 'first_name': 'JPG', 'id': 5924091558, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'channel_chat_created': False, 'message_id': 1179, 'entities': [], 'caption_entities': [], 'photo': [], 'date': 1678122953, 'new_chat_photo': [], 'supergroup_chat_created': False, 'group_chat_created': False, 'new_chat_members': [], 'delete_chat_photo': False, 'text': 'G', 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'from': {'first_name': 'JPG', 'id': 5924091558, 'is_bot': False, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'text': 'Hcug', 'delete_chat_photo': False, 'photo': [], 'new_chat_members': [], 'entities': [], 'chat': {'id': 5924091558, 'type': 'private', 'first_name': 'JPG'}, 'message_id': 1180, 'channel_chat_created': False, 'date': 1678123008, 'new_chat_photo': [], 'supergroup_chat_created': False, 'caption_entities': [], 'group_chat_created': False, 'from': {'language_code': 'ru', 'id': 5924091558, 'is_bot': False, 'first_name': 'JPG'}}"
+  },
+  {
+    "message": "{'entities': [], 'message_id': 1181, 'photo': [], 'date': 1678123121, 'new_chat_photo': [], 'text': 'Gf', 'supergroup_chat_created': False, 'group_chat_created': False, 'chat': {'type': 'private', 'id': 5924091558, 'first_name': 'JPG'}, 'new_chat_members': [], 'caption_entities': [], 'channel_chat_created': False, 'delete_chat_photo': False, 'from': {'is_bot': False, 'language_code': 'ru', 'first_name': 'JPG', 'id': 5924091558}}"
+  },
+  {
+    "message": "{'date': 1678123176, 'channel_chat_created': False, 'supergroup_chat_created': False, 'photo': [], 'chat': {'id': 5924091558, 'first_name': 'JPG', 'type': 'private'}, 'caption_entities': [], 'new_chat_members': [], 'group_chat_created': False, 'message_id': 1182, 'delete_chat_photo': False, 'new_chat_photo': [], 'entities': [], 'text': 'G', 'from': {'is_bot': False, 'first_name': 'JPG', 'id': 5924091558, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'message_id': 1183, 'channel_chat_created': False, 'text': 'U', 'chat': {'type': 'private', 'id': 5924091558, 'first_name': 'JPG'}, 'photo': [], 'entities': [], 'new_chat_members': [], 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'date': 1678123214, 'from': {'first_name': 'JPG', 'is_bot': False, 'id': 5924091558, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'message_id': 1185, 'channel_chat_created': False, 'text': 'Test', 'chat': {'type': 'private', 'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон'}, 'photo': [], 'entities': [], 'new_chat_members': [], 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'date': 1678123260, 'from': {'first_name': 'Антон', 'is_bot': False, 'username': 'Anton293', 'id': 983486538, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'message_id': 1187, 'channel_chat_created': False, 'text': 'Работает', 'chat': {'type': 'private', 'id': 5924091558, 'first_name': 'JPG'}, 'photo': [], 'entities': [], 'new_chat_members': [], 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'date': 1678123272, 'from': {'first_name': 'JPG', 'is_bot': False, 'id': 5924091558, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'message_id': 1190, 'channel_chat_created': False, 'text': 'Иепр', 'chat': {'type': 'private', 'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон'}, 'photo': [], 'entities': [], 'new_chat_members': [], 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'date': 1678123284, 'from': {'first_name': 'Антон', 'is_bot': False, 'username': 'Anton293', 'id': 983486538, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'message_id': 1191, 'channel_chat_created': False, 'text': 'Прл', 'chat': {'type': 'private', 'id': 5924091558, 'first_name': 'JPG'}, 'photo': [], 'entities': [], 'new_chat_members': [], 'supergroup_chat_created': False, 'group_chat_created': False, 'caption_entities': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'date': 1678123292, 'from': {'first_name': 'JPG', 'is_bot': False, 'id': 5924091558, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'delete_chat_photo': False, 'caption_entities': [], 'channel_chat_created': False, 'supergroup_chat_created': False, 'date': 1678123332, 'new_chat_members': [], 'new_chat_photo': [], 'entities': [], 'group_chat_created': False, 'message_id': 1193, 'photo': [], 'text': 'Р', 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'from': {'is_bot': False, 'first_name': 'JPG', 'id': 5924091558, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'chat': {'type': 'private', 'first_name': 'JPG', 'id': 5924091558}, 'entities': [], 'message_id': 1194, 'date': 1678123356, 'text': 'Пр', 'group_chat_created': False, 'caption_entities': [], 'supergroup_chat_created': False, 'photo': [], 'channel_chat_created': False, 'new_chat_members': [], 'delete_chat_photo': False, 'new_chat_photo': [], 'from': {'language_code': 'ru', 'id': 5924091558, 'is_bot': False, 'first_name': 'JPG'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'delete_chat_photo': False, 'date': 1678123387, 'text': 'Гмг', 'photo': [], 'channel_chat_created': False, 'group_chat_created': False, 'entities': [], 'new_chat_members': [], 'caption_entities': [], 'chat': {'first_name': 'JPG', 'id': 5924091558, 'type': 'private'}, 'new_chat_photo': [], 'message_id': 1195, 'from': {'is_bot': False, 'id': 5924091558, 'first_name': 'JPG', 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'text': 'Лох', 'date': 1678127639, 'new_chat_members': [], 'caption_entities': [], 'supergroup_chat_created': False, 'entities': [], 'channel_chat_created': False, 'chat': {'id': 983486538, 'type': 'private', 'first_name': 'Антон', 'username': 'Anton293'}, 'delete_chat_photo': False, 'message_id': 1197, 'photo': [], 'new_chat_photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'is_bot': False}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'text': 'Лох', 'date': 1678127665, 'new_chat_members': [], 'caption_entities': [], 'supergroup_chat_created': False, 'entities': [], 'channel_chat_created': False, 'chat': {'id': 983486538, 'type': 'private', 'first_name': 'Антон', 'username': 'Anton293'}, 'delete_chat_photo': False, 'message_id': 1198, 'photo': [], 'new_chat_photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'is_bot': False}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'text': 'Лох', 'date': 1678127691, 'new_chat_members': [], 'caption_entities': [], 'supergroup_chat_created': False, 'entities': [], 'channel_chat_created': False, 'chat': {'id': 983486538, 'type': 'private', 'first_name': 'Антон', 'username': 'Anton293'}, 'delete_chat_photo': False, 'message_id': 1200, 'photo': [], 'new_chat_photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'is_bot': False}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'text': 'Лох', 'date': 1678127694, 'new_chat_members': [], 'caption_entities': [], 'supergroup_chat_created': False, 'entities': [], 'channel_chat_created': False, 'chat': {'id': 983486538, 'type': 'private', 'first_name': 'Антон', 'username': 'Anton293'}, 'delete_chat_photo': False, 'message_id': 1202, 'photo': [], 'new_chat_photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'is_bot': False}}"
+  },
+  {
+    "message": "{'group_chat_created': False, 'text': 'Лох', 'date': 1678127697, 'new_chat_members': [], 'caption_entities': [], 'supergroup_chat_created': False, 'entities': [], 'channel_chat_created': False, 'chat': {'id': 983486538, 'type': 'private', 'first_name': 'Антон', 'username': 'Anton293'}, 'delete_chat_photo': False, 'message_id': 1204, 'photo': [], 'new_chat_photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'is_bot': False}}"
+  },
+  {
+    "message": "{'new_chat_members': [], 'chat': {'first_name': 'Антон', 'type': 'private', 'username': 'Anton293', 'id': 983486538}, 'new_chat_photo': [], 'entities': [], 'channel_chat_created': False, 'text': 'Лох', 'supergroup_chat_created': False, 'photo': [], 'date': 1678127779, 'group_chat_created': False, 'delete_chat_photo': False, 'message_id': 1206, 'caption_entities': [], 'from': {'language_code': 'ru', 'is_bot': False, 'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон'}}"
+  },
+  {
+    "message": "{'new_chat_members': [], 'chat': {'first_name': 'Антон', 'type': 'private', 'username': 'Anton293', 'id': 983486538}, 'new_chat_photo': [], 'entities': [], 'channel_chat_created': False, 'text': 'Лох', 'supergroup_chat_created': False, 'photo': [], 'date': 1678127783, 'group_chat_created': False, 'delete_chat_photo': False, 'message_id': 1207, 'caption_entities': [], 'from': {'language_code': 'ru', 'is_bot': False, 'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон'}}"
+  },
+  {
+    "message": "{'new_chat_members': [], 'chat': {'first_name': 'Антон', 'type': 'private', 'username': 'Anton293', 'id': 983486538}, 'new_chat_photo': [], 'entities': [], 'channel_chat_created': False, 'text': 'Лох', 'supergroup_chat_created': False, 'photo': [], 'date': 1678127787, 'group_chat_created': False, 'delete_chat_photo': False, 'message_id': 1209, 'caption_entities': [], 'from': {'language_code': 'ru', 'is_bot': False, 'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон'}}"
+  },
+  {
+    "message": "{'entities': [], 'text': 'Лох', 'channel_chat_created': False, 'message_id': 1211, 'supergroup_chat_created': False, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'chat': {'type': 'private', 'id': 983486538, 'first_name': 'Антон', 'username': 'Anton293'}, 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'date': 1678128083, 'from': {'first_name': 'Антон', 'language_code': 'ru', 'id': 983486538, 'is_bot': False, 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'entities': [], 'text': 'Лох', 'channel_chat_created': False, 'message_id': 1212, 'supergroup_chat_created': False, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'chat': {'type': 'private', 'id': 983486538, 'first_name': 'Антон', 'username': 'Anton293'}, 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'date': 1678128088, 'from': {'first_name': 'Антон', 'language_code': 'ru', 'id': 983486538, 'is_bot': False, 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'message_id': 1214, 'group_chat_created': False, 'new_chat_photo': [], 'caption_entities': [], 'date': 1678128123, 'supergroup_chat_created': False, 'delete_chat_photo': False, 'new_chat_members': [], 'channel_chat_created': False, 'entities': [], 'photo': [], 'text': 'Лох', 'chat': {'username': 'Anton293', 'type': 'private', 'first_name': 'Антон', 'id': 983486538}, 'from': {'is_bot': False, 'first_name': 'Антон', 'language_code': 'ru', 'username': 'Anton293', 'id': 983486538}}"
+  },
+  {
+    "message": "{'message_id': 1215, 'group_chat_created': False, 'new_chat_photo': [], 'caption_entities': [], 'date': 1678128159, 'supergroup_chat_created': False, 'delete_chat_photo': False, 'new_chat_members': [], 'channel_chat_created': False, 'entities': [], 'photo': [], 'text': 'Лох', 'chat': {'username': 'Anton293', 'type': 'private', 'first_name': 'Антон', 'id': 983486538}, 'from': {'is_bot': False, 'first_name': 'Антон', 'language_code': 'ru', 'username': 'Anton293', 'id': 983486538}}"
+  },
+  {
+    "message": "{'message_id': 1217, 'group_chat_created': False, 'new_chat_photo': [], 'caption_entities': [], 'date': 1678128202, 'supergroup_chat_created': False, 'delete_chat_photo': False, 'new_chat_members': [], 'channel_chat_created': False, 'entities': [], 'photo': [], 'text': 'Лох', 'chat': {'username': 'Anton293', 'type': 'private', 'first_name': 'Антон', 'id': 983486538}, 'from': {'is_bot': False, 'first_name': 'Антон', 'language_code': 'ru', 'username': 'Anton293', 'id': 983486538}}"
+  },
+  {
+    "message": "{'caption_entities': [], 'group_chat_created': False, 'chat': {'type': 'private', 'first_name': 'Антон', 'username': 'Anton293', 'id': 983486538}, 'text': 'Лох', 'new_chat_members': [], 'entities': [], 'message_id': 1219, 'date': 1678128323, 'photo': [], 'delete_chat_photo': False, 'new_chat_photo': [], 'channel_chat_created': False, 'supergroup_chat_created': False, 'from': {'is_bot': False, 'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон', 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'text': 'Лох', 'new_chat_members': [], 'entities': [], 'date': 1678128374, 'group_chat_created': False, 'channel_chat_created': False, 'chat': {'id': 983486538, 'first_name': 'Антон', 'type': 'private', 'username': 'Anton293'}, 'supergroup_chat_created': False, 'delete_chat_photo': False, 'caption_entities': [], 'photo': [], 'message_id': 1220, 'new_chat_photo': [], 'from': {'language_code': 'ru', 'is_bot': False, 'id': 983486538, 'username': 'Anton293', 'first_name': 'Антон'}}"
+  },
+  {
+    "message": "{'new_chat_members': [], 'message_id': 1221, 'date': 1678128486, 'channel_chat_created': False, 'group_chat_created': False, 'photo': [], 'delete_chat_photo': False, 'supergroup_chat_created': False, 'chat': {'type': 'private', 'first_name': 'Антон', 'username': 'Anton293', 'id': 983486538}, 'entities': [], 'new_chat_photo': [], 'text': 'Лох', 'caption_entities': [], 'from': {'is_bot': False, 'first_name': 'Антон', 'username': 'Anton293', 'id': 983486538, 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'date': 1678128593, 'group_chat_created': False, 'new_chat_members': [], 'caption_entities': [], 'supergroup_chat_created': False, 'chat': {'type': 'private', 'first_name': 'Антон', 'id': 983486538, 'username': 'Anton293'}, 'channel_chat_created': False, 'message_id': 1222, 'text': 'Лох', 'new_chat_photo': [], 'photo': [], 'entities': [], 'delete_chat_photo': False, 'from': {'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'is_bot': False, 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'delete_chat_photo': False, 'caption_entities': [], 'chat': {'username': 'Anton293', 'type': 'private', 'id': 983486538, 'first_name': 'Антон'}, 'new_chat_photo': [], 'message_id': 1223, 'group_chat_created': False, 'new_chat_members': [], 'channel_chat_created': False, 'entities': [], 'date': 1678128771, 'text': 'Лох', 'photo': [], 'from': {'username': 'Anton293', 'language_code': 'ru', 'first_name': 'Антон', 'is_bot': False, 'id': 983486538}}"
+  },
+  {
+    "message": "{'entities': [], 'chat': {'first_name': 'Антон', 'username': 'Anton293', 'id': 983486538, 'type': 'private'}, 'text': 'Лох', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 1225, 'group_chat_created': False, 'photo': [], 'date': 1678128865, 'delete_chat_photo': False, 'new_chat_members': [], 'channel_chat_created': False, 'caption_entities': [], 'from': {'is_bot': False, 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'entities': [], 'chat': {'first_name': 'Антон', 'username': 'Anton293', 'id': 983486538, 'type': 'private'}, 'text': 'Лох', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 1227, 'group_chat_created': False, 'photo': [], 'date': 1678128870, 'delete_chat_photo': False, 'new_chat_members': [], 'channel_chat_created': False, 'caption_entities': [], 'from': {'is_bot': False, 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'entities': [], 'chat': {'first_name': 'Антон', 'username': 'Anton293', 'id': 983486538, 'type': 'private'}, 'text': 'Лох', 'new_chat_photo': [], 'supergroup_chat_created': False, 'message_id': 1229, 'group_chat_created': False, 'photo': [], 'date': 1678128875, 'delete_chat_photo': False, 'new_chat_members': [], 'channel_chat_created': False, 'caption_entities': [], 'from': {'is_bot': False, 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон', 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'photo': [], 'entities': [], 'message_id': 1231, 'delete_chat_photo': False, 'date': 1678129122, 'chat': {'type': 'private', 'username': 'Anton293', 'first_name': 'Антон', 'id': 983486538}, 'new_chat_members': [], 'supergroup_chat_created': False, 'caption_entities': [], 'new_chat_photo': [], 'text': 'Лох', 'group_chat_created': False, 'channel_chat_created': False, 'from': {'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False, 'id': 983486538, 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'photo': [], 'entities': [], 'message_id': 1232, 'delete_chat_photo': False, 'date': 1678129126, 'chat': {'type': 'private', 'username': 'Anton293', 'first_name': 'Антон', 'id': 983486538}, 'new_chat_members': [], 'supergroup_chat_created': False, 'caption_entities': [], 'new_chat_photo': [], 'text': 'Лох', 'group_chat_created': False, 'channel_chat_created': False, 'from': {'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False, 'id': 983486538, 'username': 'Anton293'}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'new_chat_photo': [], 'chat': {'type': 'private', 'first_name': 'Антон', 'id': 983486538, 'username': 'Anton293'}, 'delete_chat_photo': False, 'text': 'Лох', 'date': 1678129178, 'entities': [], 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1233, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'new_chat_photo': [], 'chat': {'type': 'private', 'first_name': 'Антон', 'id': 983486538, 'username': 'Anton293'}, 'delete_chat_photo': False, 'text': 'Лох', 'date': 1678129182, 'entities': [], 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1235, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'new_chat_photo': [], 'chat': {'type': 'private', 'first_name': 'Антон', 'id': 983486538, 'username': 'Anton293'}, 'delete_chat_photo': False, 'text': 'Лох', 'date': 1678129186, 'entities': [], 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1237, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'new_chat_photo': [], 'chat': {'type': 'private', 'first_name': 'Антон', 'id': 983486538, 'username': 'Anton293'}, 'delete_chat_photo': False, 'text': 'Лох', 'date': 1678129188, 'entities': [], 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1239, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'new_chat_photo': [], 'chat': {'type': 'private', 'first_name': 'Антон', 'id': 983486538, 'username': 'Anton293'}, 'delete_chat_photo': False, 'text': 'Лох', 'date': 1678129201, 'entities': [], 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1241, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'new_chat_photo': [], 'chat': {'type': 'private', 'first_name': 'Антон', 'id': 983486538, 'username': 'Anton293'}, 'delete_chat_photo': False, 'text': 'Лох', 'date': 1678129207, 'entities': [], 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1243, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False}}"
+  },
+  {
+    "message": "{'supergroup_chat_created': False, 'new_chat_photo': [], 'chat': {'type': 'private', 'first_name': 'Антон', 'id': 983486538, 'username': 'Anton293'}, 'delete_chat_photo': False, 'text': 'Лох', 'date': 1678129212, 'entities': [], 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 1244, 'new_chat_members': [], 'caption_entities': [], 'photo': [], 'from': {'username': 'Anton293', 'id': 983486538, 'first_name': 'Антон', 'language_code': 'ru', 'is_bot': False}}"
+  },
+  {
+    "message": "{'caption_entities': [], 'delete_chat_photo': False, 'chat': {'first_name': 'Антон', 'type': 'private', 'id': 983486538, 'username': 'Anton293'}, 'date': 1678129441, 'entities': [], 'channel_chat_created': False, 'text': 'Сука', 'new_chat_photo': [], 'message_id': 1245, 'supergroup_chat_created': False, 'new_chat_members': [], 'photo': [], 'group_chat_created': False, 'from': {'id': 983486538, 'is_bot': False, 'first_name': 'Антон', 'username': 'Anton293', 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'caption_entities': [], 'delete_chat_photo': False, 'chat': {'first_name': 'Антон', 'type': 'private', 'id': 983486538, 'username': 'Anton293'}, 'date': 1678129448, 'entities': [], 'channel_chat_created': False, 'text': 'Лох', 'new_chat_photo': [], 'message_id': 1247, 'supergroup_chat_created': False, 'new_chat_members': [], 'photo': [], 'group_chat_created': False, 'from': {'id': 983486538, 'is_bot': False, 'first_name': 'Антон', 'username': 'Anton293', 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'photo': [], 'message_id': 1249, 'channel_chat_created': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'entities': [], 'text': 'Лох', 'date': 1678129642, 'new_chat_photo': [], 'caption_entities': [], 'delete_chat_photo': False, 'new_chat_members': [], 'chat': {'id': 983486538, 'first_name': 'Антон', 'username': 'Anton293', 'type': 'private'}, 'from': {'username': 'Anton293', 'is_bot': False, 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон'}}"
+  },
+  {
+    "message": "{'photo': [], 'message_id': 1251, 'channel_chat_created': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'entities': [], 'text': 'Лох', 'date': 1678129661, 'new_chat_photo': [], 'caption_entities': [], 'delete_chat_photo': False, 'new_chat_members': [], 'chat': {'id': 983486538, 'first_name': 'Антон', 'username': 'Anton293', 'type': 'private'}, 'from': {'username': 'Anton293', 'is_bot': False, 'id': 983486538, 'language_code': 'ru', 'first_name': 'Антон'}}"
+  },
+  {
+    "message": "{'entities': [], 'new_chat_members': [], 'caption_entities': [], 'message_id': 1253, 'photo': [], 'delete_chat_photo': False, 'new_chat_photo': [], 'supergroup_chat_created': False, 'text': 'лох', 'chat': {'type': 'private', 'id': 983486538, 'first_name': 'Антон', 'username': 'Anton293'}, 'channel_chat_created': False, 'group_chat_created': False, 'date': 1678130243, 'from': {'is_bot': False, 'id': 983486538, 'first_name': 'Антон', 'username': 'Anton293', 'language_code': 'en'}}"
+  },
+  {
+    "message": "{'entities': [], 'new_chat_members': [], 'caption_entities': [], 'message_id': 1255, 'photo': [], 'delete_chat_photo': False, 'new_chat_photo': [], 'supergroup_chat_created': False, 'text': 'Лох', 'chat': {'type': 'private', 'id': 5924091558, 'first_name': 'JPG'}, 'channel_chat_created': False, 'group_chat_created': False, 'date': 1678130266, 'from': {'is_bot': False, 'id': 5924091558, 'first_name': 'JPG', 'language_code': 'ru'}}"
+  },
+  {
+    "message": "{'date': 1678130439, 'channel_chat_created': False, 'entities': [], 'delete_chat_photo': False, 'new_chat_members': [], 'photo': [], 'chat': {'id': 5924091558, 'first_name': 'JPG', 'type': 'private'}, 'supergroup_chat_created': False, 'message_id': 1258, 'text': 'Лох', 'new_chat_photo': [], 'caption_entities': [], 'group_chat_created': False, 'from': {'is_bot': False, 'first_name': 'JPG', 'id': 5924091558, 'language_code': 'ru'}}"
   }
 ]
