@@ -12,6 +12,8 @@ def admin_command(command):
         if update.message.from_user.id in config.global_configuration_server['moderators']:
             return command(update, context, *args, **kwargs)
         else:
+            print("[info]Кто-то попитался использовать команду предназначеную для админа")
+            print(update.message.from_user.id)
             return None
 
     return wrapper

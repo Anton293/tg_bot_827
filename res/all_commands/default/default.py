@@ -1,7 +1,7 @@
 """users commands default"""
 import sqlite3
 import json
-from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, error
 from root.default import admin_command, read_file
 
 import os
@@ -24,7 +24,7 @@ def help(update, _):
     update.message.reply_text(f"Команда help пустая;)")
 
 
-def error(update, context):
+def processing_error(update, context):
     print(f"Update {update} ///// cause error: {context.error}")
 
 
@@ -47,16 +47,26 @@ def add_record_to_database(id, username, first_name, database):
     return False
 
 
-def send_all_admin_message(msg: str, button="") -> None:
+def send_all_admin_message(msg: str, button=None) -> None:
     """send all admins message"""
-    for admin_id in config['moderators']:
-        bot.send_message(admin_id, msg, reply_markup=button)
+    if button is not None:
+        for admin_id in config['moderators']:
+            try:
+                bot.send_message(admin_id, msg, reply_markup=button)
+            except:
+                print(f"Chat not found: {admin_id}")
+    else:
+        for admin_id in config['moderators']:
+            try:
+                bot.send_message(int(admin_id), msg)
+            except:
+                print(f"Chat not found: {admin_id}")
 
 
 def start(update, _):
     """command TG bot: /start """
     get_data = update.message
-    if add_record_to_database(get_data.chat.id, get_data.chat.username, get_data.from_user.first_name, "res/db/default/records.db") is False:
+    if True or add_record_to_database(get_data.chat.id, get_data.chat.username, get_data.from_user.first_name, "res/db/default/records.db") is False:
         result_text = f"👋[@{get_data.chat.username}|{get_data.chat.id}] New user {get_data.from_user.first_name}!"
         send_all_admin_message(result_text)
         update.message.reply_text(f"""
@@ -85,11 +95,19 @@ def check_message_on_bad_word(update):
     """filter message on bad word"""
     text_message = update.message.text
 
-    if filter_messages(text_message, BAD_WORDS_LIST) is True:
-        user_id = update.message.from_user.id
+    if filter_messages(text_message.lower(), BAD_WORDS_LIST) is True:
+        from_user = update.message.from_user
+        user_id = from_user.id
         #добавить запись нарушителя в бд и проверить сколько раз он уже нарушил + написать количество нарушений пользователя
-        update.message.delete()
-        update.bot.send_message(update.message.chat.id, 'Сообщение было удалено, так как содержит запрещенное слово.')
+        name_violators = from_user.username
+        if name_violators:
+            name_violators = from_user.first_name
+
+        try:
+            update.message.delete()
+            bot.send_message(update.message.chat.id, f'Сообщение от пользователя {name_violators} было удалено, так как содержит запрещенное слово.')
+        except error.BadRequest as e:
+            print(f"Error: {e}")
         return True
     return False
 
@@ -128,7 +146,7 @@ def create_button(button_name, button_data):
 #######################################################
 
 
-def text(update, _) -> None:
+def text(update, _):
     """get and processing text in TG bot"""
     append_to_array_messages("res/db/default/messages.json", {"message": str(update.message)})
     admin_send_message_in_virtual_chat_user(update)
@@ -182,6 +200,13 @@ def stoped_all_chat_moderators(update, _):
     storage_command['data_messages_admin_user'] = []
     storage_command['data_messages_other_user'] = []
     update.message.reply_text("chats by stoped in admins")
+
+
+@admin_command
+def get_rule_group(update, _):
+    update.message.reply_text(read_file("res/db/default/role_group.txt"))
+
+
 ##########################################
 
 

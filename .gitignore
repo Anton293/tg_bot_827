@@ -1,0 +1,5 @@
+#.gitignore
+#*.json
+*.env
+.idea/
+*.db

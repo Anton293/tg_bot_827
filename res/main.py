@@ -110,7 +110,9 @@ def main():
     dispatcher.add_handler(CommandHandler("help", default.help))
     dispatcher.add_handler(CommandHandler("reply_user", default.reply_user))
     dispatcher.add_handler(CommandHandler("get_chat", default.get_chat))
+
     dispatcher.add_handler(CommandHandler("get_list_user", default.list_users))
+    dispatcher.add_handler(CommandHandler("get_rule_group", default.get_rule_group))
     dispatcher.add_handler(MessageHandler(Filters.text, default.text))
     dispatcher.add_handler(CallbackQueryHandler(keyboard_events))
 
