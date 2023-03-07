@@ -1,6 +1,8 @@
 """users commands default"""
 import sqlite3
 import json
+import time
+
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, error
 from root.default import admin_command, read_file
 
@@ -174,7 +176,7 @@ def result_check_bad_words(update) -> bool:
     try:
         if update.message.chat.id in config['chats_have_filters_bad_word'] or update.message.chat.type in config['chats_have_filters_bad_word']:
             return check_message_on_bad_word(update)
-    except TypeError as e:
+    except (AttributeError, TypeError) as e:
         print(f"Error type -> begin_check_bad_words(): {e}")
     return False
 
