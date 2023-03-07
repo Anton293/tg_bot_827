@@ -120,10 +120,11 @@ def check_message_on_bad_word(update):
         from_user = update.message.from_user
         #добавить запись нарушителя в бд и проверить сколько раз он уже нарушил + написать количество нарушений пользователя
         res = count_violators(update.message.chat.id, from_user.id)
-
         name_violators = from_user.username
         if name_violators:
             name_violators = from_user.first_name
+
+        print(f"[info]Aggresion messages by user {name_violators} -> {text_message}")
 
         try:
             update.message.delete()

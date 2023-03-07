@@ -1,5 +1,9 @@
-#.gitignore
+.gitignore
 #*.json
 *.env
 .idea/
 *.db
+violators.json
+messages.json
+role_group.txt
+bad_word.txt
