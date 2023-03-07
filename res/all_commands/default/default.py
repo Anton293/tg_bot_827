@@ -168,6 +168,16 @@ def create_button(button_name, button_data):
     reply_markup = InlineKeyboardMarkup(button_reply)
     return reply_markup
 
+
+def result_check_bad_words(update) -> bool:
+    try:
+        if update.message.chat.id in config['chats_have_filters_bad_word'] or update.message.chat.type in config['chats_have_filters_bad_word']:
+            return check_message_on_bad_word(update)
+    except TypeError as e:
+        print(f"Error type -> begin_check_bad_words(): {e}")
+    return False
+
+
 #######################################################
 
 
@@ -176,9 +186,8 @@ def text(update, _) -> None:
     append_to_array_messages("res/db/default/messages.json", {"message": str(update.message)})
     admin_send_message_in_virtual_chat_user(update)
 
-    if update.message.chat.id in config['chats_have_filters_bad_word'] or update.message.chat.type in config['chats_have_filters_bad_word'][0]:
-        if check_message_on_bad_word(update) is True:
-            return None
+    if result_check_bad_words(update) is True:
+        return None
 
     try:
         check_type_chat = update.message.chat.type == 'private'
