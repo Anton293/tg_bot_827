@@ -1,6 +1,8 @@
 import json
 import os
-dr = "res/db/"
+
+HEAD_CONFIG_PATH = "res/config.json"
+HEAD_DIR_COMMANDS = "res/db/"
 
 
 def read_file(file_path):
@@ -64,10 +66,10 @@ class DatabaseBot(object):
         }
 
     def initialization(self):
-        path = dr
-        for d in os.listdir(path):
-            if os.path.isdir(os.path.join(path, d)):
-                self.data_commands[d] = read_file(path+d+"/data.json")
+        path = HEAD_DIR_COMMANDS
+        for command_dir in os.listdir(path):
+            if os.path.isdir(os.path.join(path, command_dir)):
+                self.data_commands[command_dir] = read_file(path+command_dir+"/data.json")
 
 
 class Config(object):
@@ -75,7 +77,7 @@ class Config(object):
         self.global_configuration_server = {}
 
     def initialization(self):
-        self.global_configuration_server = read_file(dr + "config.json")
+        self.global_configuration_server = read_file(HEAD_CONFIG_PATH)
 
 
 data = DatabaseBot()
@@ -83,5 +85,3 @@ data.initialization()
 
 config = Config()
 config.initialization()
-
-#init config print

@@ -5,6 +5,7 @@ import os
 
 #default pkg python
 from threading import Thread
+import asyncio
 
 #pkg telegram bot
 from dotenv import load_dotenv
@@ -70,15 +71,15 @@ def keyboard_events(update: Update, _: CallbackContext) -> None:
                     storage_command['data_messages_admin_user'].append(admin_user_id)
 
                     #create button
-                    reply_markup = create_reply_markup_button("❌Відміна❌", f"reply_user_cancel:{other_user_id}")
+                    reply_markup = create_reply_markup_button("❌Отмена❌", f"reply_user_cancel:{other_user_id}")
 
                     #update message
-                    query.edit_message_text(f"⏰Ви почали спілкування з: \n{query.message.text}", reply_markup=reply_markup)
+                    query.edit_message_text(f"⏰Ви разгавариваете с: \n{query.message.text}", reply_markup=reply_markup)
 
 
         elif "reply_user_cancel" in query.data:
             #create button
-            reply_markup = create_reply_markup_button("Почати чат", f"reply_user_active:{other_user_id}")
+            reply_markup = create_reply_markup_button("Начать чат", f"reply_user_active:{other_user_id}")
 
             #update message
             text = "\n".join(query.message.text.split("\n")[1:])
@@ -88,14 +89,14 @@ def keyboard_events(update: Update, _: CallbackContext) -> None:
             try:
                 del storage_command['data_messages_other_user'][storage_command['data_messages_admin_user'].index(admin_user_id)]
                 storage_command['data_messages_admin_user'].remove(admin_user_id)
-                query.message.reply_text(f"[🛑]Спілкування з користувачем 👉 @{bot.get_chat(int(other_user_id)).username} завершено!")
+                query.message.reply_text(f"[🛑]Общение с участником 👉 @{bot.get_chat(int(other_user_id)).username} окончено!")
             except ValueError:
                 pass
 
     return
 
 
-def main():
+async def main():
     updater = Updater(os.getenv('TOKEN'), use_context=True)
     dispatcher = updater.dispatcher
 
@@ -104,15 +105,11 @@ def main():
 
     # Register command handlers
     dispatcher.add_handler(CommandHandler("get_week", callbackquerybutton.get_button_options))
-    dispatcher.add_handler(CommandHandler("send_chat", admin_command.send_chat))
     dispatcher.add_handler(CommandHandler("start_events", begin_events))
     dispatcher.add_handler(CommandHandler("start", default.start))
-    dispatcher.add_handler(CommandHandler("help", default.help))
-    dispatcher.add_handler(CommandHandler("reply_user", default.reply_user))
     dispatcher.add_handler(CommandHandler("get_chat", default.get_chat))
 
     dispatcher.add_handler(CommandHandler("get_list_user", default.list_users))
-    dispatcher.add_handler(CommandHandler("get_rule_group", default.get_rule_group))
     dispatcher.add_handler(MessageHandler(Filters.text, default.text))
     dispatcher.add_handler(CallbackQueryHandler(keyboard_events))
 
@@ -125,4 +122,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    asyncio.run(main())

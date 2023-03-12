@@ -16,15 +16,11 @@ storage_command = data.data_commands['default']
 
 bot = Bot(token=os.getenv('TOKEN'))
 
-
+#my module
+from all_commands.default.module_checking_message import check_messages
 ####################################################################
 #                           moderate users                         #
 ####################################################################
-
-
-@admin_command
-def help(update, _):
-    update.message.reply_text(f"Команда help пустая;)")
 
 
 def processing_error(update, context):
@@ -84,61 +80,6 @@ def start(update, _):
 
 list_users = []
 
-BAD_WORDS_LIST = read_file("res/db/default/bad_word.txt").split("\n")
-read_file_violators = json.loads(read_file("res/db/default/violators.json"))
-
-
-def filter_messages(message_text: str, LIST_BANNED_WORDS: list) -> bool:
-    """check banned word in message"""
-    for word in LIST_BANNED_WORDS:
-        if word in message_text:
-            return True
-    return False
-
-
-def count_violators(group_id: int, user_id: int):
-    for i, item in enumerate(read_file_violators):
-        if item[0] == user_id:
-            if item[1] >= 5:
-                try:
-                    bot.kick_chat_member(chat_id=group_id, user_id=user_id)
-                except error.BadRequest as e:
-                    print(f"User {user_id} -> {e}")
-                return -1
-            read_file_violators[i][1] = item[1]+1
-            write_json_in_file(read_file_violators, "res/db/default/violators.json")
-            return item[1]
-    read_file_violators.append([user_id, 1])
-    bot.send_message(group_id, read_file("res/db/default/role_group.txt"))
-    write_json_in_file(read_file_violators, "res/db/default/violators.json")
-    return 1
-
-
-def check_message_on_bad_word(update):
-    """filter message on bad word"""
-    text_message = update.message.text
-
-    if filter_messages(text_message.lower(), BAD_WORDS_LIST) is True:
-        from_user = update.message.from_user
-        #добавить запись нарушителя в бд и проверить сколько раз он уже нарушил + написать количество нарушений пользователя
-        res = count_violators(update.message.chat.id, from_user.id)
-        name_violators = from_user.username
-        if name_violators:
-            name_violators = from_user.first_name
-
-        print(f"[info]Aggresion messages by user {name_violators} -> {text_message}")
-
-        try:
-            update.message.delete()
-            if update.message.chat.type != "private":
-                bot.send_message(update.message.chat.id, f'Нарушения {res} из 5. Сообщение от пользователя {name_violators} было удалено, так как содержит запрещенное слово или контекст.')
-            else:
-                bot.send_message(update.message.chat.id, f'Сообщение несет агрессию. Будьте вежливы и терпеливы.')
-        except error.BadRequest as e:
-            print(f"Error: {e}")
-        return True
-    return False
-
 
 def append_to_array_messages(file_name: str, new_element: dict) -> None:
     """add to array messages in file"""
@@ -172,25 +113,17 @@ def create_button(button_name, button_data):
     return reply_markup
 
 
-def result_check_bad_words(update) -> bool:
-    try:
-        if update.message.chat.id in config['chats_have_filters_bad_word'] or update.message.chat.type in config['chats_have_filters_bad_word']:
-            return check_message_on_bad_word(update)
-    except (AttributeError, TypeError) as e:
-        print(f"Error type -> begin_check_bad_words(): {e}")
-    return False
-
-
 #######################################################
 
 
 def text(update, _) -> None:
     """get and processing text in TG bot"""
     append_to_array_messages("res/db/default/messages.json", {"message": str(update.message)})
-    admin_send_message_in_virtual_chat_user(update)
 
-    if result_check_bad_words(update) is True:
+    if check_messages.check_messages_on_banned_content(update) is True:
         return None
+
+    admin_send_message_in_virtual_chat_user(update)
 
     try:
         check_type_chat = update.message.chat.type == 'private'
@@ -200,7 +133,7 @@ def text(update, _) -> None:
             username = update.message.chat.username
             chat_id = update.message.chat.id
             msg = update.message.text
-            reply_markup = create_button("💌Почати чат💌", f"reply_user_active:{chat_id}")
+            reply_markup = create_button("💌Начать чат💌", f"reply_user_active:{chat_id}")
 
             if str(chat_id) in storage_command['data_messages_other_user']:
                 try:
@@ -217,35 +150,9 @@ def text(update, _) -> None:
         print("Error function `text(update, _)` in `default/default.py`\n", e)
 
 
-@admin_command
-def reply_user(update, _) -> None:
-    """reply user on message used id"""
-    if update.message.chat.type == 'private':
-        try:
-            res = update.message.text.split()
-            bot.send_message(int(res[1]), " ".join(res[2:]))
-        except (IndexError, ValueError):
-            update.message.reply_text("Используйте: /reply_user <user_id> <message>")
-        except:
-            print(f"Возникла непредвиденная ошибка в функции reply_user() в default.py -> {update.message}")
-
-
-@admin_command
-def stop_all_chat_moderators(update, _):
-    """stop all chat and send message"""
-    storage_command['data_messages_admin_user'] = []
-    storage_command['data_messages_other_user'] = []
-    for admin_id in storage_command['data_messages_admin_user']:
-        bot.send_message(admin_id, "Всі чати були завершені, але за бажанням ви можете продовжити розмову")
-    update.message.reply_text("chats by stoped in admins")
-
-
-@admin_command
-def get_rule_group(update, _):
-    update.message.reply_text(read_file("res/db/default/role_group.txt"))
-
-
-##########################################
+##########################################################
+#                   specefic command                     #
+##########################################################
 
 
 def get_username_by_user_id(user_id: int) -> str:

@@ -1,0 +1,20 @@
+{
+  "chats_have_filters_bad_word": ["private", -1001605339520],
+  "moderators": [983486538, 5741678605, 1087968824],
+  "super_admin": [983486538],
+  "send_all_private_message_in_terminal": true,
+  "send_moderators_banned_messages": true,
+  "check_messages": {
+            "chats": [
+              {"chat_id": -1001605339520, "check_list": ["spam", "smiles", "caps", "adverting", "bad_words"], "immunity_of_moderators": true},
+              {"chat_id": "private", "check_list": ["spam", "bad_words"], "immunity_of_moderators": true}
+            ],
+            "bad_words_file_path": "res/db/default/bad_word.txt",
+            "violators_file_path": "res/db/default/violators.json",
+            "max_research_last_messages": 10,
+            "max_same_messages": 3,
+            "max_uppercase_ratio": 0.9,
+            "min_number_of_capital_letters": 5,
+            "max_manu_smiles": 10
+      }
+}
