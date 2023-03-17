@@ -1,23 +1,49 @@
-import socket
+import time
+import datetime
+import itertools
 
-# Задаємо адресу та порт, до якого потрібно відправити запит
-host = '192.168.0.109'
-port = 80
 
-# Створюємо об'єкт сокету
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+def test(func):
+    def yellow(text):
+        return "\033[33m" + text + "\033[0m"
 
-# Відправляємо запит на сервер за допомогою методу connect()
-client_socket.connect((host, port))
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(yellow(f"[info]Function ʼ{func.__name__}ʼ took {(end-start):.8f} seconds to run."))
+        return result
+    return wrapper
 
-# Відправляємо дані на сервер за допомогою методу sendall()
-client_socket.sendall(b'GET / HTTP/1.1\r\nHost: example.com\r\n\r\n')
 
-# Отримуємо відповідь від сервера за допомогою методу recv()
-response = client_socket.recv(4096)
+def has_latin_chars(text):
+    for char in text:
+        if 0x0041 <= ord(char) <= 0x005A:
+            return True
+    return False
 
-# Виводимо отриману відповідь
-print(response.decode())
 
-# Закриваємо з'єднання
-client_socket.close()
+set_bad_words = open("res/db/default/bad_word.txt", "r").read().split("\n")
+
+
+@test
+def check_message_on_bad_words(message_text: str) -> bool:
+    """search bad words in message"""
+    message_lower_word = message_text.lower()
+    if any([1024 >= ord(char) <= 1111 for char in message_lower_word]):
+        print("yes")
+        message_lower_word = ''.join(dict_replace_letters.get(c, c) for c in message_lower_word)
+
+    print(message_lower_word)
+    for banned_word in set_bad_words:
+        if banned_word in message_lower_word:
+            return True
+    return False
+
+
+text = "прbвіт друже, не міг би ти підти звідси naxyй"
+for i in range(5000):
+    if "spam" in ["spam", "smiles", "caps", "adverting", "bad_words"]:
+        print(True)
+
+

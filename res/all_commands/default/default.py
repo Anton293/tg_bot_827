@@ -4,11 +4,9 @@ import json
 import time
 
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, error
-from root.default import admin_command, read_file
+from root.default import admin_command, read_file, test
 
 import os
-from dotenv import load_dotenv
-load_dotenv(dotenv_path="res/db/.env")
 
 from root.data_users import data, config, write_json_in_file
 config = config.global_configuration_server
@@ -116,11 +114,15 @@ def create_button(button_name, button_data):
 #######################################################
 
 
+@test
 def text(update, _) -> None:
     """get and processing text in TG bot"""
     append_to_array_messages("res/db/default/messages.json", {"message": str(update.message)})
 
-    if check_messages.check_messages_on_banned_content(update) is True:
+    if (result := check_messages.check_messages_on_banned_content(update)) is not None:
+        print(update.message.text)
+        update.message.delete()
+        update.message.reply_text(result)
         return None
 
     admin_send_message_in_virtual_chat_user(update)
@@ -148,6 +150,7 @@ def text(update, _) -> None:
 
     except AttributeError as e:
         print("Error function `text(update, _)` in `default/default.py`\n", e)
+        print(update)
 
 
 ##########################################################
@@ -162,6 +165,7 @@ def get_username_by_user_id(user_id: int) -> str:
 
 
 def get_chat(update, _):
+    #сделать включение и отключение етой команди с помощью похожей
     """get meta-data message chats"""
     print(update.message.chat.id)
     print(update)

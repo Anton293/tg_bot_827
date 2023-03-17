@@ -12,6 +12,7 @@ from root.data_users import config, write_json_in_file
 config = config.global_configuration_server
 bot = Bot(token=os.getenv('TOKEN'))
 
+
 def read_file(file_path: str):
     """Read the file from the given file path and return its contents as a list of strings."""
     try:
@@ -28,11 +29,12 @@ def read_file(file_path: str):
 class CheckMessage(object):
     def __init__(self):
         self.config = {}
-        self.list_last_messages = [] #последних n сообщений груп
+        self.list_last_messages = [] #список последних сообщений для иследования
         self.list_count_message_users_private_chat = [] #защита бота от спама в приватних сообщениях
 
         self.list_bad_words = []
         self.list_violators = []
+        self.dict_replace_letters = []
         self.array_adverting_banned_words = []
 
     def initialisation(self) -> None:
@@ -41,6 +43,7 @@ class CheckMessage(object):
 
         self.list_bad_words = read_file(self.config['bad_words_file_path']).split("\n")
         self.list_violators = json.loads(read_file(self.config['violators_file_path']))
+        self.dict_replace_letters = json.loads(read_file(self.config['replace_letters_file_path']))
         self.array_adverting_banned_words = [
             "t.me/+", "скидка", "скидки",
             "заказать", "скидочка", "заказывайте",
@@ -56,11 +59,14 @@ class CheckMessage(object):
                 return True
         return False
 
-    def check_message_on_bad_words(self, message: str) -> bool:
+    def check_message_on_bad_words(self, message_text: str) -> bool:
         """search bad words in message"""
-        message_lower_word = message.lower()
+        message_lower_text = message_text.lower()
+        if any([1024 >= ord(char) <= 1111 for char in message_lower_text]):
+            message_lower_text = ''.join(self.dict_replace_letters.get(c, c) for c in message_lower_text)
+
         for banned_word in self.list_bad_words:
-            if banned_word in message_lower_word:
+            if banned_word in message_lower_text:
                 return True
         return False
 
@@ -91,8 +97,6 @@ class CheckMessage(object):
             if char.isupper():
                 number_upper_char += 1
 
-        print(number_upper_char)
-
         if self.config['min_number_of_capital_letters'] < number_upper_char >= int(len(clean_message) * self.config['max_uppercase_ratio']):
             return True
         return False
@@ -105,7 +109,6 @@ class CheckMessage(object):
 
     def count_violators(self, update, group_id: int, user_id: int):
         MAX_VIOLATIONS = 5
-        VIOLATORS_FILE_PATH = "res/db/default/violators.json"
         ROLE_GROUP_FILE_PATH = "res/db/default/role_group.txt"
         # Ищем пользователя в списке нарушителей
         for i, item in enumerate(self.list_violators):
@@ -123,14 +126,14 @@ class CheckMessage(object):
                     return -1
                 # Увеличиваем количество нарушений у пользователя
                 self.list_violators[i][1] = item[1] + 1
-                write_json_in_file(self.list_violators, VIOLATORS_FILE_PATH)
-                logger.info(f"User {user_id} has {item[1] + 1} violations")
-                return item[1] + 1
+                write_json_in_file(self.list_violators, self.config['violators_file_path'])
+                logger.info(f"User {user_id} has {item[1]} violations")
+                return item[1]
 
         # Если пользователя нет в списке нарушителей, добавляем его туда
         self.list_violators.append([user_id, 1])
         bot.send_message(group_id, read_file(ROLE_GROUP_FILE_PATH))
-        write_json_in_file(self.list_violators, VIOLATORS_FILE_PATH)
+        write_json_in_file(self.list_violators, self.config['violators_file_path'])
         logger.info(f"User {user_id} has been added to the violators list")
         return 1
 
@@ -138,6 +141,7 @@ class CheckMessage(object):
         first_name = update.message.from_user.first_name
         try:
             number_violators = self.count_violators(update, chat_id, user_id)
+            print(number_violators)
             if update.message.chat.type != "private" and number_violators != -1:
                 bot.send_message(update.message.chat.id, f'Нарушения {number_violators} из 5. Сообщение от пользователя {first_name} было удалено, такое поведения непреемливое у нас.')
             else:
@@ -146,10 +150,14 @@ class CheckMessage(object):
             print(f"Error: {e}")
 
     def check_messages_on_banned_content(self, update):
-        text_messages = update.message.text
-        user_id = update.message.from_user.id
-        chat_id = update.message.chat.id
-        chat_type = update.message.chat.type
+        try:
+            text_messages = update.message.text
+            user_id = update.message.from_user.id
+            chat_id = update.message.chat.id
+            chat_type = update.message.chat.type
+        except AttributeError as e:
+            print(f"Attribute error: {e}")
+            return None
         get_chat_rule = {}
         for chat_rule in self.config['chats']:
             if chat_rule['chat_id'] == chat_id:
@@ -159,40 +167,37 @@ class CheckMessage(object):
                 get_chat_rule = chat_rule.copy()
                 break
 
-        if get_chat_rule == {}:
-            return False
+        print(get_chat_rule)
 
-        if user_id in config['moderators'] and get_chat_rule['immunity_of_moderators'] is True or user_id in config['super_admin']:
-            return False
+        if get_chat_rule == {}:
+            return None
+        elif user_id in config['moderators'] and get_chat_rule['immunity_of_moderators']:
+            return None
+        elif user_id in config['super_admin']:
+            return None
 
         if "spam" in get_chat_rule["check_list"]:
             if self.check_message_on_spam(user_id, text_messages) is True:
-                update.message.delete()
-                update.message.reply_text(f"Не спамте пожалуйста")
                 self.head_violators_function(update, chat_id, user_id)
-                return True
+                return f"Не спамте пожалуйста"
+
         if "smiles" in get_chat_rule['check_list']:
             if self.check_message_on_manu_smiles(text_messages) is True:
-                update.message.delete()
-                update.message.reply_text(f"Слишком много смайликов")
-                return True
+                return f"Слишком много емодзи"
+
         if "smiles" in get_chat_rule['check_list']:
             if self.check_message_on_adverting(text_messages) is True:
-                update.message.delete()
-                update.message.reply_text(f"Реклама запрещена")
                 self.head_violators_function(update, chat_id, user_id)
-                return True
+                return f"Реклама запрещена"
+
         if "caps" in get_chat_rule['check_list']:
             if self.check_message_on_caps(text_messages) is True:
-                update.message.delete()
-                update.message.reply_text("Слишком много капса в сообщении")
-                return True
+                return "Слишком много капса в сообщении"
+
         if "bad_words" in get_chat_rule['check_list']:
             if self.check_message_on_bad_words(text_messages) is True:
-                update.message.delete()
-                update.message.reply_text(f"Сообщение несет агрессию. Будьте вежливы и терпеливы.")
                 self.head_violators_function(update, chat_id, user_id)
-                return True
+                return f"Сообщение несет агрессию. Будьте вежливы и терпеливы."
 
 
 check_messages = CheckMessage()

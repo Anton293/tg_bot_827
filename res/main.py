@@ -8,7 +8,6 @@ from threading import Thread
 import asyncio
 
 #pkg telegram bot
-from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, Bot
 from telegram.ext import CommandHandler, MessageHandler, Filters, CallbackQueryHandler, Updater, CallbackContext
 
@@ -18,7 +17,6 @@ from all_commands.moderate_bot import admin_command
 from all_commands.default import default
 
 #initialisation
-load_dotenv(dotenv_path="res/db/.env")
 from root.data_users import data
 storage_command = data.data_commands['default']
 bot = Bot(token=os.getenv('TOKEN'))
@@ -101,6 +99,14 @@ async def main():
     dispatcher = updater.dispatcher
 
     # Initialize admin commands
+    path = "res/all_commands"
+    for file_command in os.listdir(path):
+        if os.path.isdir(os.path.join(path, file_command)) is False:
+            module_name = f"all_commands.{file_command[:-3]}"
+            imported_module = __import__(module_name, fromlist=["command"])
+            dispatcher.add_handler(CommandHandler(imported_module.command.call_name, imported_module.command.call_command))
+            print(f"Запущена команда -> /{imported_module.command.call_name} -> {imported_module.command.description}")
+
     admin_command.head_function_register_command_admin(dispatcher, CommandHandler)
 
     # Register command handlers

@@ -62,3 +62,16 @@ def throttle_all_server(seconds=5):
             return func(*args, **kwargs)
         return wrapper
     return decorator
+
+
+def test(func):
+    def yellow(text):
+        return "\033[33m" + text + "\033[0m"
+
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(yellow(f"[info]Function ʼ{func.__name__}ʼ took {(end-start):.8f} seconds to run."))
+        return result
+    return wrapper
