@@ -7,7 +7,7 @@
   "check_messages": {
             "chats": [
               {"chat_id": -1001605339520, "check_list": ["spam", "smiles", "caps", "adverting", "bad_words"], "immunity_of_moderators": true},
-              {"chat_id": -1001634593352, "check_list": ["spam", "smiles", "caps", "adverting", "bad_words"], "immunity_of_moderators": true},
+              {"chat_id": -1001634593352, "check_list": ["spam", "bad_words"], "immunity_of_moderators": true},
               {"chat_id": "private", "check_list": ["spam", "bad_words"], "immunity_of_moderators": true}
             ],
             "bad_words_file_path": "res/db/default/bad_word.txt",

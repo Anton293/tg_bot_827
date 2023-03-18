@@ -9,10 +9,12 @@ import logging
 logger = logging.getLogger(__name__)
 
 from root.data_users import config, write_json_in_file
+from root.default import test
 config = config.global_configuration_server
 bot = Bot(token=os.getenv('TOKEN'))
 
 
+@test
 def read_file(file_path: str):
     """Read the file from the given file path and return its contents as a list of strings."""
     try:
@@ -26,6 +28,7 @@ def read_file(file_path: str):
         raise IOError(f"Error reading file: {e}")
 
 
+@test
 class CheckMessage(object):
     def __init__(self):
         self.config = {}
@@ -37,6 +40,7 @@ class CheckMessage(object):
         self.dict_replace_letters = []
         self.array_adverting_banned_words = []
 
+    @test
     def initialisation(self) -> None:
         """initialisation component and save file in var"""
         self.config = config['check_messages']
@@ -51,6 +55,7 @@ class CheckMessage(object):
             "подпишись", " вот мой ", "переходи"
         ]
 
+    @test
     def check_message_on_adverting(self, message: str) -> bool:
         """check associate text adverting in message"""
         message_lower_word = message.lower()
@@ -59,6 +64,7 @@ class CheckMessage(object):
                 return True
         return False
 
+    @test
     def check_message_on_bad_words(self, message_text: str) -> bool:
         """search bad words in message"""
         message_lower_text = message_text.lower()
@@ -70,6 +76,7 @@ class CheckMessage(object):
                 return True
         return False
 
+    @test
     def check_message_on_spam(self, user_id: int, message: str) -> bool:
         """antispam"""
         clean_message = message.strip(". <>,0- _+=?\n").lower()
@@ -87,6 +94,7 @@ class CheckMessage(object):
             return True
         return False
 
+    @test
     def check_message_on_caps(self, message: str):
         clean_message = message.strip(". <>,0- _+=?\n")
         if len(clean_message) <= 3:
@@ -101,12 +109,14 @@ class CheckMessage(object):
             return True
         return False
 
+    @test
     def check_message_on_manu_smiles(self, message: str):
         smiles = findall("[\U00010000-\U0010ffff]", message)
         if len(smiles) >= self.config['max_manu_smiles']:
             return True
         return False
 
+    @test
     def count_violators(self, update, group_id: int, user_id: int):
         MAX_VIOLATIONS = 5
         ROLE_GROUP_FILE_PATH = "res/db/default/role_group.txt"
@@ -137,6 +147,7 @@ class CheckMessage(object):
         logger.info(f"User {user_id} has been added to the violators list")
         return 1
 
+    @test
     def head_violators_function(self, update, chat_id: int, user_id: int):
         first_name = update.message.from_user.first_name
         try:
@@ -149,6 +160,7 @@ class CheckMessage(object):
         except BadRequest as e:
             print(f"Error: {e}")
 
+    @test
     def check_messages_on_banned_content(self, update):
         try:
             text_messages = update.message.text
@@ -166,8 +178,6 @@ class CheckMessage(object):
             elif chat_rule['chat_id'] == chat_type:
                 get_chat_rule = chat_rule.copy()
                 break
-
-        print(get_chat_rule)
 
         if get_chat_rule == {}:
             return None
