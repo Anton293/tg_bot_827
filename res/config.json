@@ -1,9 +1,19 @@
 {
   "chats_have_filters_bad_word": ["private", -1001605339520],
-  "moderators": [-983486538, 5741678605, 1087968824],
-  "super_admin": [-983486538],
+  "moderators": [983486538, 5741678605, 1087968824],
+  "super_admin": [983486538],
+  "ban_users": [],
   "send_all_private_message_in_terminal": true,
   "send_moderators_banned_messages": true,
+  "point_save_messages": 10,
+  "commands": {
+      "start": {
+          "texts": [
+            "Привет, тут регистация в TikTok House! Мы будем рады увидеть тебя в нашей группе, чтобы поделиться нашими общими интересами и хобби.\nНаша группа - это место, где можно обмениваться мнениями, идеями и мыслями друг о друге. Но снаначала раскажите немного осебе!\"\"\"",
+            "Разкажи о себе:\n Имя, страна, день рождения(день/месяц), количество лет"
+          ]
+      }
+  },
   "check_messages": {
             "chats": [
               {"chat_id": -1001605339520, "check_list": ["spam", "smiles", "caps", "adverting", "bad_words"], "immunity_of_moderators": true},

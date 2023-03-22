@@ -103,16 +103,20 @@ async def main():
     for file_command in os.listdir(path):
         if os.path.isdir(os.path.join(path, file_command)) is False:
             module_name = f"all_commands.{file_command[:-3]}"
-            imported_module = __import__(module_name, fromlist=["command"])
-            dispatcher.add_handler(CommandHandler(imported_module.command.call_name, imported_module.command.call_command))
-            print(f"Запущена команда -> /{imported_module.command.call_name} -> {imported_module.command.description}")
+            try:
+                imported_module = __import__(module_name, fromlist=["command"])
+                dispatcher.add_handler(CommandHandler(imported_module.command.call_name, imported_module.command.call_command))
+                print(f"Запущена команда -> /{imported_module.command.call_name} -> {imported_module.command.description}")
+            except (AttributeError, ImportError):
+                pass
+        else:
+            pass
 
     admin_command.head_function_register_command_admin(dispatcher, CommandHandler)
 
     # Register command handlers
     dispatcher.add_handler(CommandHandler("get_week", callbackquerybutton.get_button_options))
     dispatcher.add_handler(CommandHandler("start_events", begin_events))
-    dispatcher.add_handler(CommandHandler("start", default.start))
     dispatcher.add_handler(CommandHandler("get_chat", default.get_chat))
 
     dispatcher.add_handler(CommandHandler("get_list_user", default.list_users))

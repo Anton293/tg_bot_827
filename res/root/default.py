@@ -3,6 +3,10 @@ import functools
 import time
 from root.data_users import config
 
+import os
+from telegram import Bot
+bot = Bot(token=os.getenv('TOKEN'))
+
 
 def admin_command(command):
     """Decorator that checks if the user is an admin and executes the command if they are."""
@@ -15,6 +19,21 @@ def admin_command(command):
         else:
             print("[info]Кто-то попитался использовать команду предназначеную для админа")
             print(update.message.from_user.id)
+            return None
+
+    return wrapper
+
+
+def check_on_ban_users(command):
+    """Decorator that ban users"""
+
+    @functools.wraps(command)
+    def wrapper(update, context, *args, **kwargs):
+        """Wrapper function that checks if the user is an admin and executes the command if they are."""
+        if update.message.from_user.id not in config.global_configuration_server['ban_users']:
+            return command(update, context, *args, **kwargs)
+        else:
+            print(f"[info]Заблокирований пользователь написал: {update.message.text}")
             return None
 
     return wrapper
@@ -64,7 +83,7 @@ def throttle_all_server(seconds=5):
     return decorator
 
 
-def test(func):
+def test_time_start(func):
     def yellow(text):
         return "\033[33m" + text + "\033[0m"
 
@@ -75,3 +94,47 @@ def test(func):
         print(yellow(f"[info]Function ʼ{func.__name__}ʼ took {(end-start):.8f} seconds to run."))
         return result
     return wrapper
+
+
+class AppendToFileDAta(object):
+    def __init__(self, point_save=10):
+        self.point_save = int(point_save)
+        self.count = 0
+        self.array_messages = []
+
+    def add(self, file_name: str, message) -> None:
+        """add to array messages in file"""
+        # Сохранить обновленный массив в файл
+        self.count += 1
+        try:
+            self.array_messages.append(f"{message.from_user.id}::{message.chat.id}::{message.text}".replace("\n", " "))
+        except AttributeError:
+            pass
+
+        if self.count >= self.point_save:
+            with open(file_name, 'a') as f:
+                f.write("\n".join(self.array_messages) + "\n")
+
+            self.count = 0
+            self.array_messages = []
+
+
+def send_all_admin_message(msg: str, button=None) -> None:
+    """send all admins message"""
+    if button is not None:
+        for i, admin_id in enumerate(config['moderators'].copy()):
+            try:
+                bot.send_message(admin_id, msg, reply_markup=button)
+            except:
+                print(f"Chat not found: {admin_id}")
+                config['moderators'].remove(admin_id)
+    else:
+        for i, admin_id in enumerate(config['moderators'].copy()):
+            try:
+                bot.send_message(int(admin_id), msg)
+            except:
+                print(f"Chat not found: {admin_id}")
+                config['moderators'].remove(admin_id)
+
+
+config = config.global_configuration_server
