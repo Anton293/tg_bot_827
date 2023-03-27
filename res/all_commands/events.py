@@ -9,9 +9,6 @@ import functools
 bot = telegram.Bot(token=os.getenv('TOKEN'))
 # Выводим информацию о каждом обновлении
 #updates = bot.get_updates()
-message = bot.send_message(text="text", chat_id=983486538)
-print(message)
-print(message.message_id)
 
 
 def count_seconds_to_next_day(hh, mm, ss):
