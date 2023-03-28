@@ -42,6 +42,7 @@ def send_message_me(events_id):
     array_items = ["L-тироксин (1 таблетка)", "Сніданок", "Хофітол", "Вітаміни та обід", "Хофітол", "Хофітол"]
     text = f"Увага, зараз: {array_items[events_id]}"
     chat_id = 983486538
+    print(text)
     message_data = bot.send_message(text=text, chat_id=chat_id)
     bot.delete_message(chat_id=chat_id, message_id=message_data.message_id - 1)
 
@@ -51,6 +52,7 @@ def send_message_mather(events_id):
     array_items = ["Сніданок", "Перекус", "Обід", "Другий перекус", "Вечеря"]
     text = f"За 5 хвилин: {array_items[events_id]}"
     chat_id = 5762049455
+    print(text)
     message_data = bot.send_message(text=text, chat_id=chat_id)
     bot.delete_message(chat_id=chat_id, message_id=message_data.message_id-1)
 
