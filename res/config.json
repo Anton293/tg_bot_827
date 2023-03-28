@@ -9,8 +9,8 @@
   "commands": {
       "start": {
           "texts": [
-            "Привет, тут регистация в TikTok House! Мы будем рады увидеть тебя в нашей группе, чтобы поделиться нашими общими интересами и хобби.\nНаша группа - это место, где можно обмениваться мнениями, идеями и мыслями друг о друге. Но снаначала раскажите немного осебе!\"\"\"",
-            "Разкажи о себе:\n Имя, страна, день рождения(день/месяц), количество лет"
+            "Привет, тут регистация в TikTok House! Мы будем рады увидеть тебя в нашей группе, чтобы поделиться нашими общими интересами и хобби.\nНаша группа - это место, где можно обмениваться мнениями, идеями и мыслями друг о друге. Но снаначала расcкажите немного осебе!",
+            "Раccкажи о себе:\n Имя, страна, день рождения(день/месяц), количество лет"
           ]
       }
   },
@@ -23,10 +23,10 @@
             "bad_words_file_path": "res/db/default/bad_word.txt",
             "violators_file_path": "res/db/default/violators.json",
             "replace_letters_file_path": "res/db/default/dict_replace_letters.json",
-            "max_research_last_messages": 10,
-            "max_same_messages": 3,
+            "max_research_last_messages": 20,
+            "max_same_messages": 7,
             "max_uppercase_ratio": 0.9,
             "min_number_of_capital_letters": 5,
-            "max_manu_smiles": 10
+            "max_manu_smiles": 20
       }
 }

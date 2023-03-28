@@ -1,6 +1,7 @@
 """default module to bot"""
 import functools
 import time
+from datetime import datetime, timedelta, time as d_time
 from root.data_users import config
 
 import os
@@ -135,6 +136,22 @@ def send_all_admin_message(msg: str, button=None) -> None:
             except:
                 print(f"Chat not found: {admin_id}")
                 config['moderators'].remove(admin_id)
+
+
+def count_second_to_time(hours, minutes, seconds):
+    now = datetime.now()
+    target_time = d_time(hours, minutes, seconds)
+
+    # Создаем объект datetime, объединяя текущую дату и целевое время
+    target_datetime = datetime.combine(now.date(), target_time)
+
+    # Если целевое время уже прошло сегодня, добавляем один день
+    if now.time() > target_time:
+        target_datetime += timedelta(days=1)
+
+    # Считаем оставшееся время в секундах
+    remaining_seconds = (target_datetime - now).total_seconds()
+    return remaining_seconds
 
 
 config = config.global_configuration_server
